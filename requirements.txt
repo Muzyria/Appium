@@ -1,4 +1,4 @@
-Appium-Python-Client==3.1.0
+Appium-Python-Client==2.9.0
 async-generator==1.10
 attrs==22.2.0
 certifi==2022.12.7

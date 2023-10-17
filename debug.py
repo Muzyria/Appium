@@ -15,3 +15,6 @@ capabilities = dict(
 
 driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', capabilities)
 driver.implicitly_wait(10)
+
+
+os.system('adb shell am start -a android.settings.DATE_SETTINGS')
