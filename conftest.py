@@ -20,14 +20,14 @@ def appium_driver():
     capabilities = dict(
         platformName='android',
         automationName='uiautomator2',
-        deviceName='192.168.3.221'
+        deviceName=''
     )
 
-    driver = appium_webdriver.Remote('http://127.0.0.1:4723/wd/hub', capabilities)
-    yield driver
-    driver.quit()
+    app_driver = appium_webdriver.Remote('http://127.0.0.1:4723/wd/hub', capabilities)
+    yield app_driver
+    app_driver.quit()
 
 
-# def test_appium_example(appium_driver):
-#     el = appium_driver.find_element(by=AppiumBy.ID, value='com.l1inc.yamatrack3d:id/buttonMenu')
-#     el.click()
+def test_appium_example(appium_driver):
+    el = appium_driver.find_element(by=AppiumBy.ID, value='com.l1inc.yamatrack3d:id/buttonMenu')
+    el.click()
