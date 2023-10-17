@@ -2,11 +2,11 @@ import time
 
 from appium.webdriver.common.appiumby import AppiumBy
 
-from pages.app_base_page import APPBasePage
+from pages.app_base_page import BasePage
 
 
 def test(appium_driver):
-
+    page = BasePage(appium_driver)
 
     el = appium_driver.find_element(by=AppiumBy.ID, value='com.l1inc.yamatrack3d:id/buttonMenu')
     el.click()
