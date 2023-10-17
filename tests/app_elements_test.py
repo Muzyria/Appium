@@ -3,12 +3,14 @@ import time
 from appium.webdriver.common.appiumby import AppiumBy
 
 from pages.app_base_page import BasePage
+from locators.app_elements_page_locators import MainScreen
 
 
 def test(appium_driver):
-    page = BasePage(appium_driver)
+    # page = BasePage(appium_driver)
+    locators = MainScreen()
 
-    el = appium_driver.find_element(by=AppiumBy.ID, value='com.l1inc.yamatrack3d:id/buttonMenu')
+    el = appium_driver.find_element(locators.BUTTON_MENU)
     el.click()
     time.sleep(3)
 

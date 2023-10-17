@@ -1,6 +1,6 @@
-from selenium.webdriver.common.by import By
+from appium.webdriver.common.appiumby import By
 
 
-class TextBoxPageLocators:
-    """form fields"""
-    FULL_NAME = (By.CSS_SELECTOR, 'input[id="userName"]')
+class MainScreen:
+    """---"""
+    BUTTON_MENU = (By.ID, 'com.l1inc.yamatrack3d:id/buttonMenu')
