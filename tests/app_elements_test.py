@@ -5,19 +5,16 @@ from appium.webdriver.common.appiumby import AppiumBy
 from pages.app_base_page import APPBasePage
 
 
-def test(driver):
-    page = APPBasePage(driver)
+def test(appium_driver):
 
-    el = driver.find_element(by=AppiumBy.ID, value='com.l1inc.yamatrack3d:id/buttonMenu')
+
+    el = appium_driver.find_element(by=AppiumBy.ID, value='com.l1inc.yamatrack3d:id/buttonMenu')
     el.click()
     time.sleep(3)
 
 
 
-# from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage, ButtonsPage, LinksPage, \
-#     UploadAndDownloadPage, DynamicPropertiesPage
-#
-#
+
 # class TestElements:
 #     class TestTextBox:
 #
