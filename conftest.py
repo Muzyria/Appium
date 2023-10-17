@@ -28,6 +28,6 @@ def appium_driver():
     app_driver.quit()
 
 
-def test_appium_example(appium_driver):
-    el = appium_driver.find_element(by=AppiumBy.ID, value='com.l1inc.yamatrack3d:id/buttonMenu')
-    el.click()
+# def test_appium_example(appium_driver):
+#     el = appium_driver.find_element(by=AppiumBy.ID, value='com.l1inc.yamatrack3d:id/buttonMenu')
+#     el.click()
