@@ -19,6 +19,7 @@ driver.implicitly_wait(10)
 
 os.system('adb shell am start -a android.settings.DATE_SETTINGS')
 
+time.sleep(3)
 
 date_time_menu = driver.find_element(By.ID, 'com.android.settings:id/list')
 print(date_time_menu.__dict__)

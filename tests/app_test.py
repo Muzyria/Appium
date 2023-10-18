@@ -7,6 +7,7 @@ class TestFirst:
 
         def test_1(self, appium_driver):
             el = Page(appium_driver)
+            el.first()
 
 
 
