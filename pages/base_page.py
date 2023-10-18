@@ -41,3 +41,11 @@ class BasePage:
         action = ActionChains(self.driver)
         action.context_click(element)
         action.perform()
+
+
+class AppiumBasePage:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def element_is_visible(self, locator, timeout=5):
+        return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
