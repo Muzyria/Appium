@@ -9,5 +9,7 @@ class TestFirst:
             el = Page(appium_driver)
             el.first()
 
-
+        def test_click_flag(self, appium_driver):
+            el = Page(appium_driver)
+            el.click_flag()
 

@@ -2,6 +2,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.mobileby import AppiumBy
+from appium.webdriver.common.touch_action import TouchAction
 
 class BasePage:
     def __init__(self, driver, url):
@@ -49,3 +50,7 @@ class AppiumBasePage:
 
     def element_is_visible(self, locator, timeout=5):
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
+
+    def touch_action(self, coordinate):
+        action = TouchAction(self.driver)
+        action.tap(x=coordinate[0], y=coordinate[1]).perform()
