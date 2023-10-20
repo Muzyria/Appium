@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.mobileby import AppiumBy
 from appium.webdriver.common.touch_action import TouchAction
 from appium import webdriver
+# from appium.webdriver.common.keys import Key
 
 
 class BasePage:
@@ -73,3 +74,14 @@ class AppiumBasePage:
         start_y = self.driver.get_window_size()['height'] * 0.8
         end_y = self.driver.get_window_size()['height'] * 0.2
         self.driver.swipe(start_x, end_y, start_x, start_y, duration)  # Прокрутка вверх
+
+    def press_key(self, key):
+        """
+        EMERGENCY = 4
+        VOLUME = 24, 25
+
+        """
+        self.driver.press_keycode(key)
+
+    def long_press_key(self, key):
+        self.driver.long_press_keycode(key)
