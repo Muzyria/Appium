@@ -13,3 +13,11 @@ class TestFirst:
             el = Page(appium_driver)
             el.click_flag()
 
+        def test_swipe(self, appium_driver):
+            el = Page(appium_driver)
+            el.swipe_my_down()
+
+
+        def test_swipe_up(self, appium_driver):
+            el = Page(appium_driver)
+            el.swipe_my_up()

@@ -3,6 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.mobileby import AppiumBy
 from appium.webdriver.common.touch_action import TouchAction
+from appium import webdriver
+
 
 class BasePage:
     def __init__(self, driver, url):
@@ -54,3 +56,20 @@ class AppiumBasePage:
     def touch_action(self, coordinate):
         action = TouchAction(self.driver)
         action.tap(x=coordinate[0], y=coordinate[1]).perform()
+
+    def swipe_screen_with_coordinate(self, start_coordinate=None, end_coordinate=None, duration=1000):  # Продолжительность свайпа в миллисекундах
+        print(self.driver.get_window_size()['width'])
+        print(self.driver.get_window_size()['height'])
+        self.driver.swipe(start_coordinate[0], start_coordinate[1], end_coordinate[0], end_coordinate[1], duration)
+
+    def swipe_screen_down(self, duration=1000):  # Продолжительность свайпа в миллисекундах
+        start_x = self.driver.get_window_size()['width'] // 2
+        start_y = self.driver.get_window_size()['height'] * 0.8
+        end_y = self.driver.get_window_size()['height'] * 0.2
+        self.driver.swipe(start_x, start_y, start_x, end_y, duration)  # Прокрутка вниз
+
+    def swipe_screen_up(self, duration=1000):  # Продолжительность свайпа в миллисекундах
+        start_x = self.driver.get_window_size()['width'] // 2
+        start_y = self.driver.get_window_size()['height'] * 0.8
+        end_y = self.driver.get_window_size()['height'] * 0.2
+        self.driver.swipe(start_x, end_y, start_x, start_y, duration)  # Прокрутка вверх

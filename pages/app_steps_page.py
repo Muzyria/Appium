@@ -14,6 +14,19 @@ class Page(AppiumBasePage):
     def click_flag(self):
         self.touch_action(self.locators.BUTTON_FLAG)
 
+    def swipe_my_down(self):
+        self.swipe_screen_down()
+        # self.swipe_screen_down()
+        # self.swipe_screen_down()
+
+
+    def swipe_my_up(self):
+        self.swipe_screen_up()
+        self.swipe_screen_up()
+        self.swipe_screen_up()
+
+
+
 
 
 
