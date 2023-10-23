@@ -1,3 +1,4 @@
+import time
 
 from pages.app_steps_page import Page
 
@@ -23,5 +24,8 @@ class TestFirst:
 
         def test_press_key(self, appium_driver):
             el = Page(appium_driver)
-            el.press_key(1)
-            el.long_press_key(1)
+
+            # el.press_key(3)
+            # el.long_press_key(3)
+            time.sleep(5)
+

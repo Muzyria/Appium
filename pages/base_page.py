@@ -87,3 +87,4 @@ class AppiumBasePage:
 
     def long_press_key(self, key):
         self.driver.long_press_keycode(key)
+
