@@ -32,3 +32,4 @@ class TestFirst:
         def test_inter_android_menu(self, appium_driver):
             el = Page(appium_driver)
             el.android_menu()
+            el.go_to_ship_mode()

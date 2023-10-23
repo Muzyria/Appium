@@ -29,6 +29,9 @@ class Page(AppiumBasePage):
         self.element_is_visible(self.locators.ANDROID_WIDGET_PASSWORD).send_keys("102938")
         self.element_is_visible(self.locators.ANDROID_WIDGET_BUTTON_OK).click()
 
+    def go_to_ship_mode(self):
+        self.element_is_visible(self.locators.ANDROID_WIDGET_MENU_BUTTON_SHIP_MODE).clic()
+
 
 
 
