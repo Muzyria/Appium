@@ -20,4 +20,12 @@ class MainScreen:
     BUTTON_AUTO_UPDATE_APK = (By.ID, 'com.l1inc.yamatrack3d:id/autoUpdateCellApk')
     BUTTON_AUTO_UPDATE_OS = (By.ID, 'com.l1inc.yamatrack3d:id/autoUpdateCellOs')
 
+    # ANDROID_WIDGET_PASSWORD = (By.ID, 'android.widget.EditText')
+    ANDROID_WIDGET_PASSWORD = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.EditText')
+    ANDROID_WIDGET_BUTTON_CANCEL = (By.ID, 'android:id/button2')
+    ANDROID_WIDGET_BUTTON_OK = (By.ID, 'android:id/button1')
+
+
+
+
 

@@ -29,3 +29,6 @@ class TestFirst:
             el.long_press_key(26)
             time.sleep(5)
 
+        def test_inter_android_menu(self, appium_driver):
+            el = Page(appium_driver)
+            el.android_menu()

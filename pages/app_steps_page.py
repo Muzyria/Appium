@@ -19,13 +19,15 @@ class Page(AppiumBasePage):
         # self.swipe_screen_down()
         # self.swipe_screen_down()
 
-
     def swipe_my_up(self):
         self.swipe_screen_up()
         self.swipe_screen_up()
         self.swipe_screen_up()
 
-
+    def android_menu(self):
+        self.long_press_key(26)
+        self.element_is_visible(self.locators.ANDROID_WIDGET_PASSWORD).send_keys("102938")
+        self.element_is_visible(self.locators.ANDROID_WIDGET_BUTTON_OK).click()
 
 
 
