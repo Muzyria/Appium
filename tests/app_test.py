@@ -26,6 +26,6 @@ class TestFirst:
             el = Page(appium_driver)
 
             # el.press_key(3)
-            # el.long_press_key(3)
+            el.long_press_key(26)
             time.sleep(5)
 
