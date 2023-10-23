@@ -77,9 +77,11 @@ class AppiumBasePage:
 
     def press_key(self, key):
         """
+        MENU = 187
         EMERGENCY = 4
+        MAIN_BUTTON = 3
         VOLUME = 24, 25
-
+        BLUETOOTH = 131
         """
         self.driver.press_keycode(key)
 
