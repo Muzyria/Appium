@@ -67,8 +67,8 @@ class MainScreen:
     """ - """
 
 
-
-
+el = MainScreen()
+print(f'{el.ANDROID_WIDGET_PASSWORD}')
 
 
 

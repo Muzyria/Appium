@@ -44,11 +44,11 @@ class Page(AppiumBasePage):
     """ - """
 
 
-    def play_menu_and_password(self):
+    def play_menu_and_password_to_settings(self):
         """Click button MENU and enter password"""
         self.element_is_visible(self.locators.BUTTON_MENU).click()
         print("CLICk BUTTON MENU")
-        self.
+        self.element_is_visible(self.locators.BUTTON_SETTINGS).click()
 
 
 
