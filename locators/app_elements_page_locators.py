@@ -126,13 +126,3 @@ class MainScreen:
     ANDROID_WIDGET_MENU_BUTTON_RESTART = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]')
     ANDROID_WIDGET_MENU_BUTTON_SHIP_MODE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[4]')
     """ - """
-
-
-el = MainScreen()
-print(f'{el.ANDROID_WIDGET_PASSWORD}')
-
-
-
-
-
-
