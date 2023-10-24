@@ -32,6 +32,27 @@ class MainScreen:
     BUTTON_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/linearLayoutSettings')
     """ - """
 
+    """Screen Enter Passcode (Screen after press button Settings)"""
+    TEXT_VIEW_ENTER_PASSCODE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewPasscode')
+    BUTTON_1 = (By.ID, 'com.l1inc.yamatrack3d:id/button1')
+    BUTTON_2 = (By.ID, 'com.l1inc.yamatrack3d:id/button2')
+    BUTTON_3 = (By.ID, 'com.l1inc.yamatrack3d:id/button3')
+    BUTTON_4 = (By.ID, 'com.l1inc.yamatrack3d:id/button4')
+    BUTTON_5 = (By.ID, 'com.l1inc.yamatrack3d:id/button5')
+    BUTTON_6 = (By.ID, 'com.l1inc.yamatrack3d:id/button6')
+    BUTTON_7 = (By.ID, 'com.l1inc.yamatrack3d:id/button7')
+    BUTTON_8 = (By.ID, 'com.l1inc.yamatrack3d:id/button8')
+    BUTTON_9 = (By.ID, 'com.l1inc.yamatrack3d:id/button9')
+    BUTTON_0 = (By.ID, 'com.l1inc.yamatrack3d:id/button0')
+    BUTTON_CLEAR = (By.ID, 'com.l1inc.yamatrack3d:id/buttonClear')
+    BUTTON_CANCEL = (By.ID, 'com.l1inc.yamatrack3d:id/buttonCancel')
+    BUTTON_SUBMIT = (By.ID, 'com.l1inc.yamatrack3d:id/buttonSubmit')
+
+    TEXT_VIEW_CAPTION_WRONG_PASSCODE_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+    TEXT_VIEW_CAPTION_WRONG_PASSCODE_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewMessage')
+    BUTTON_OK_VIEW_CAPTION_WRONG_PASSCODE = (By.ID, 'com.l1inc.yamatrack3d:id/buttonOk')
+    """ - """
+
 
     """android widget password to menu"""
     ANDROID_WIDGET_PASSWORD = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.EditText')
