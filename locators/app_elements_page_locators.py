@@ -145,6 +145,123 @@ class MainScreen:
     BUTTON_UPDATE_TOURNAMENTS_MENU_UPDATES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[6]/android.widget.LinearLayout/android.widget.TextView')
     """ - """
 
+    """Updates -> Update All Settings"""
+    BUTTON_CANCEL_UPDATE_ALL_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_UPDATE_ALL_SETTINGS_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    TEXT_VIEW_LAST_UPDATE_UPDATE_ALL_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdate')
+    TEXT_VIEW_LAST_UPDATE_TIME_UPDATE_ALL_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdateTime')
+    TEXT_VIEW_STATUS_UPDATE_ALL_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatus')
+    TEXT_VIEW_STATUS_TEXT_UPDATE_ALL_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatusText')
+
+    TEXT_VIEW_YOUR_DEVICE_IS_UPDATED_UPDATE_ALL_SETTINGS_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdatedMessage')
+    TEXT_VIEW_UPDATE_ALL_SETTINGS_MESSAGE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.widget.TextView')
+    BUTTON_UPDATE_NOW_UPDATE_ALL_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/buttonUpdateEverythingNow')
+    """ - """
+
+    """Updates -> Update Advertisement"""
+    BUTTON_CANCEL_UPDATE_ADVERTISEMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_UPDATE_ADVERTISEMENTS_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    TEXT_VIEW_LAST_UPDATE_UPDATE_ADVERTISEMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdate')
+    TEXT_VIEW_LAST_UPDATE_TIME_UPDATE_ADVERTISEMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdateTime')
+    TEXT_VIEW_STATUS_UPDATE_ADVERTISEMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatus')
+    TEXT_VIEW_STATUS_TEXT_UPDATE_ADVERTISEMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatusText')
+
+    TEXT_VIEW_NETWORK_DETECTED_UPDATE_ADVERTISEMENTS_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateNowMessage')
+    TEXT_VIEW_SELECT_UPDATE_NOW_UPDATE_ADVERTISEMENTS_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateDetailedMessage')
+
+    TEXT_VIEW_YOUR_DEVICE_IS_UPDATED_UPDATE_ADVERTISEMENTS_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdatedMessage')
+
+    BUTTON_UPDATE_NOW_UPDATE_ADVERTISEMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/buttonUpdateNow')
+    """ - """
+
+    """Updates -> Update Pin Locations"""
+    BUTTON_CANCEL_UPDATE_PIN_LOCATIONS = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_UPDATE_PIN_LOCATIONS_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    TEXT_VIEW_LAST_UPDATE_UPDATE_PIN_LOCATIONS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdate')
+    TEXT_VIEW_LAST_UPDATE_TIME_UPDATE_PIN_LOCATIONS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdateTime')
+    TEXT_VIEW_STATUS_UPDATE_PIN_LOCATIONS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatus')
+    TEXT_VIEW_STATUS_TEXT_UPDATE_PIN_LOCATIONS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatusText')
+
+    TEXT_VIEW_NETWORK_DETECTED_UPDATE_PIN_LOCATIONS_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateNowMessage')
+    TEXT_VIEW_SELECT_UPDATE_NOW_UPDATE_PIN_LOCATIONS_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateDetailedMessage')
+
+    TEXT_VIEW_YOUR_DEVICE_IS_UPDATED_UPDATE_PIN_LOCATIONS_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdatedMessage')
+
+    BUTTON_UPDATE_NOW_UPDATE_PIN_LOCATIONS = (By.ID, 'com.l1inc.yamatrack3d:id/buttonUpdateNow')
+    """ - """
+
+    """Updates -> Update Food and Beverage Menu"""
+    BUTTON_CANCEL_UPDATE_FOOD = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_UPDATE_FOOD_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    TEXT_VIEW_LAST_UPDATE_UPDATE_FOOD = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdate')
+    TEXT_VIEW_LAST_UPDATE_TIME_UPDATE_FOOD = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdateTime')
+    TEXT_VIEW_STATUS_UPDATE_FOOD = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatus')
+    TEXT_VIEW_STATUS_TEXT_UPDATE_FOOD = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatusText')
+
+    TEXT_VIEW_NETWORK_DETECTED_UPDATE_FOOD_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateNowMessage')
+    TEXT_VIEW_SELECT_UPDATE_NOW_UPDATE_FOOD_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateDetailedMessage')
+
+    TEXT_VIEW_YOUR_DEVICE_IS_UPDATED_UPDATE_FOOD_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdatedMessage')
+
+    BUTTON_UPDATE_NOW_UPDATE_FOOD = (By.ID, 'com.l1inc.yamatrack3d:id/buttonUpdateNow')
+    """ - """
+
+    """Updates -> Update Yamatrack Application"""
+    BUTTON_CANCEL_UPDATE_YAMATRACK_APPLICATION = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_UPDATE_YAMATRACK_APPLICATION_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    TEXT_VIEW_LAST_UPDATE_UPDATE_YAMATRACK_APPLICATION = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdate')
+    TEXT_VIEW_LAST_UPDATE_TIME_UPDATE_YAMATRACK_APPLICATION = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdateTime')
+    TEXT_VIEW_STATUS_UPDATE_YAMATRACK_APPLICATION = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatus')
+    TEXT_VIEW_STATUS_TEXT_UPDATE_YAMATRACK_APPLICATION = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatusText')
+
+    TEXT_VIEW_NETWORK_DETECTED_UPDATE_YAMATRACK_APPLICATION_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateNowMessage')
+    TEXT_VIEW_SELECT_UPDATE_NOW_UPDATE_YAMATRACK_APPLICATION_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateDetailedMessage')
+
+    TEXT_VIEW_YOUR_DEVICE_IS_UPDATED_UPDATE_YAMATRACK_APPLICATION_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdatedMessage')
+
+    BUTTON_UPDATE_NOW_UPDATE_YAMATRACK_APPLICATION = (By.ID, 'com.l1inc.yamatrack3d:id/buttonUpdateNow')
+    """ - """
+
+    """Updates -> Update Tournaments"""
+    BUTTON_CANCEL_UPDATE_TOURNAMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_UPDATE_TOURNAMENTS_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    TEXT_VIEW_LAST_UPDATE_UPDATE_TOURNAMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdate')
+    TEXT_VIEW_LAST_UPDATE_TIME_UPDATE_TOURNAMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdateTime')
+    TEXT_VIEW_STATUS_UPDATE_TOURNAMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatus')
+    TEXT_VIEW_STATUS_TEXT_UPDATE_TOURNAMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatusText')
+
+    TEXT_VIEW_NETWORK_DETECTED_UPDATE_TOURNAMENTS_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateNowMessage')
+    TEXT_VIEW_SELECT_UPDATE_NOW_UPDATE_TOURNAMENTS_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateDetailedMessage')
+
+    TEXT_VIEW_YOUR_DEVICE_IS_UPDATED_UPDATE_TOURNAMENTS_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdatedMessage')
+
+    BUTTON_UPDATE_NOW_UPDATE_TOURNAMENTS = (By.ID, 'com.l1inc.yamatrack3d:id/buttonUpdateNow')
+    """ - """
+
+    """Request Log Files"""
+    BUTTON_CANCEL_REQUEST_LOG_FILES = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_REQUEST_LOG_FILES_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    TEXT_VIEW_LAST_UPDATE_REQUEST_LOG_FILES = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdate')
+    TEXT_VIEW_LAST_UPDATE_TIME_REQUEST_LOG_FILES = (By.ID, 'com.l1inc.yamatrack3d:id/textViewLastUpdateTime')
+    TEXT_VIEW_STATUS_REQUEST_LOG_FILES = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatus')
+    TEXT_VIEW_STATUS_TEXT_REQUEST_LOG_FILES = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatusText')
+
+    TEXT_VIEW_NETWORK_DETECTED_REQUEST_LOG_FILES_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateNowMessage')
+    TEXT_VIEW_SELECT_UPDATE_NOW_REQUEST_LOG_FILES_MESSAGE = (
+    By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateDetailedMessage')
+
+    TEXT_VIEW_YOUR_DEVICE_IS_UPDATED_REQUEST_LOG_FILES_MESSAGE = (
+    By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdatedMessage')
+
+    BUTTON_UPDATE_NOW_REQUEST_LOG_FILES = (By.ID, 'com.l1inc.yamatrack3d:id/buttonUpdateNow')
+    """ - """
 
 
     """android widget password to menu"""
