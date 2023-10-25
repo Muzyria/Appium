@@ -254,13 +254,11 @@ class MainScreen:
     TEXT_VIEW_STATUS_TEXT_REQUEST_LOG_FILES = (By.ID, 'com.l1inc.yamatrack3d:id/textViewStatusText')
 
     TEXT_VIEW_NETWORK_DETECTED_REQUEST_LOG_FILES_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateNowMessage')
-    TEXT_VIEW_SELECT_UPDATE_NOW_REQUEST_LOG_FILES_MESSAGE = (
-    By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateDetailedMessage')
+    TEXT_VIEW_SELECT_UPDATE_NOW_REQUEST_LOG_FILES_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateDetailedMessage')
 
-    TEXT_VIEW_YOUR_DEVICE_IS_UPDATED_REQUEST_LOG_FILES_MESSAGE = (
-    By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdatedMessage')
+    # TEXT_VIEW_YOUR_DEVICE_IS_UPDATED_REQUEST_LOG_FILES_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdatedMessage')
 
-    BUTTON_UPDATE_NOW_REQUEST_LOG_FILES = (By.ID, 'com.l1inc.yamatrack3d:id/buttonUpdateNow')
+    BUTTON_REQUEST_LOGS = (By.ID, 'com.l1inc.yamatrack3d:id/buttonRequestLogs')
     """ - """
 
 
