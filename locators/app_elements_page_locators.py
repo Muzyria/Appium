@@ -55,7 +55,7 @@ class MainScreen:
 
     """Menu Settings"""
     BUTTON_CANCEL_MENU_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
-    TEXT_VIEW_MENU_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+    TEXT_VIEW_MENU_SETTINGS_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
 
     BUTTON_ASSET_DETAILS_MENU_SETTINGS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView')
     BUTTON_CLEAR_SCORECARD_END_ROUND_MENU_SETTINGS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView')
@@ -113,6 +113,38 @@ class MainScreen:
     TEXT_VIEW_IMEI_ASSET_DETAILS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.LinearLayout/android.widget.TextView[1]')
     TEXT_VIEW_IMEI_VALUE_ASSET_DETAILS = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.LinearLayout/android.widget.TextView[2]')
     """ - """
+
+    """Clear ScoreCard / End Round"""
+    BUTTON_CANCEL_CLEAR_SCORECARD = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_CLEAR_SCORECARD_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+    TEXT_VIEW_CLEAR_SCORECARD_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewMessage')
+
+    BUTTON_YES_CLEAR_SCORECARD = (By.ID, 'com.l1inc.yamatrack3d:id/buttonYes')
+    BUTTON_NO_CLEAR_SCORECARD = (By.ID, 'com.l1inc.yamatrack3d:id/buttonNo')
+    """ - """
+
+    """Demo Mode"""
+    BUTTON_CANCEL_DEMO_MODE = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_DEMO_MODE_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    BUTTON_YES_DEMO_MODE = (By.ID, 'com.l1inc.yamatrack3d:id/buttonYes')
+    BUTTON_NO_DEMO_MODE = (By.ID, 'com.l1inc.yamatrack3d:id/buttonNo')
+    TEXT_VIEW_YES_LABEL = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView')
+    TEXT_VIEW_NO_LABEL = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView')
+    """ - """
+
+    """Updates"""
+    BUTTON_CANCEL_UPDATES = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_UPDATES_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    BUTTON_UPDATE_ALL_SETTINGS_MENU_UPDATES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView')
+    BUTTON_UPDATE_ADVERTISEMENTS_MENU_UPDATES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView')
+    BUTTON_UPDATE_PIN_LOCATIONS_MENU_UPDATES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.TextView')
+    BUTTON_UPDATE_FOOD_BEVERAGE_MENU_MENU_UPDATES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.widget.TextView')
+    BUTTON_UPDATE_YAMATRACK_APPLICATION_MENU_UPDATES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[5]/android.widget.LinearLayout/android.widget.TextView')
+    BUTTON_UPDATE_TOURNAMENTS_MENU_UPDATES = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[6]/android.widget.LinearLayout/android.widget.TextView')
+    """ - """
+
 
 
     """android widget password to menu"""
