@@ -256,10 +256,49 @@ class MainScreen:
     TEXT_VIEW_NETWORK_DETECTED_REQUEST_LOG_FILES_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateNowMessage')
     TEXT_VIEW_SELECT_UPDATE_NOW_REQUEST_LOG_FILES_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdateDetailedMessage')
 
-    # TEXT_VIEW_YOUR_DEVICE_IS_UPDATED_REQUEST_LOG_FILES_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewUpdatedMessage')
+    TEXT_VIEW_REQUEST_LOG_FILES_PROCESS = (By.ID, 'com.l1inc.yamatrack3d:id/textViewProcessPercentage')
+    TEXT_VIEW_REQUEST_LOG_FILES_PROCESS_VIEW = (By.ID, 'com.l1inc.yamatrack3d:id/progressView')
 
     BUTTON_REQUEST_LOGS = (By.ID, 'com.l1inc.yamatrack3d:id/buttonRequestLogs')
     """ - """
+
+    """GPS Static Hold"""
+    BUTTON_CANCEL_GPS_STATIC_HOLD = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_GPS_STATIC_HOLD_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    BUTTON_ON_OFF_GPS_STATIC_HOLD = (By.ID, 'com.l1inc.yamatrack3d:id/buttonOnOff')
+    """ - """
+
+    """Tablet Settings"""
+    BUTTON_CANCEL_TABLET_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_TABLET_SETTINGS_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    TEXT_VIEW_TABLET_SETTINGS_MESSAGE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.TextView')
+
+    BUTTON_YES_TABLET_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/buttonYes')
+    BUTTON_NO_TABLET_SETTINGS = (By.ID, 'com.l1inc.yamatrack3d:id/buttonNo')
+    """ - """
+
+    """Exit Application"""
+    BUTTON_CANCEL_EXIT_APPLICATION = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_EXIT_APPLICATION_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    TEXT_VIEW_EXIT_APPLICATION_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/customFontTextView2')
+
+    BUTTON_YES_EXIT_APPLICATION = (By.ID, 'com.l1inc.yamatrack3d:id/buttonYes')
+    BUTTON_NO_EXIT_APPLICATION = (By.ID, 'com.l1inc.yamatrack3d:id/buttonNo')
+    """ - """
+
+    """Full App Reset"""
+    BUTTON_CANCEL_FULL_APP_RESET = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+    TEXT_VIEW_FULL_APP_RESET_TITLE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewCaption')
+
+    TEXT_VIEW_FULL_APP_RESET_MESSAGE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.TextView')
+
+    BUTTON_YES_FULL_APP_RESET = (By.ID, 'com.l1inc.yamatrack3d:id/buttonYes')
+    BUTTON_NO_FULL_APP_RESET = (By.ID, 'com.l1inc.yamatrack3d:id/buttonNo')
+    """ - """
+
 
 
     """android widget password to menu"""
