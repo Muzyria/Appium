@@ -4,7 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.mobileby import AppiumBy
 from appium.webdriver.common.touch_action import TouchAction
 from appium import webdriver
-# from appium.webdriver.common.keys import Key
 
 
 class BasePage:
