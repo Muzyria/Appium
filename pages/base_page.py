@@ -90,19 +90,35 @@ class AppiumBasePage:
         """
         self.driver.long_press_keycode(key)
 
-    def take_screenshot(self, file_name):     # Пример использования: self.take_screenshot('screenshot.png')
+    def take_screenshot(self, file_name, extra_name=''):     # Пример использования: self.take_screenshot('screenshot.png')
+        path_directory = 'screenshots/'
         try:
-            self.driver.save_screenshot(file_name)
+            self.driver.save_screenshot(f"{path_directory}{file_name}{extra_name}.jpg")
             print(f"Скриншот сохранен: {file_name}")
         except Exception as e:
             print(f"Ошибка при создании скриншота: {e}")
 
-    def take_element_screenshot(self, locator, file_name): # Пример использования:  # self.take_element_screenshot((MobileBy.ID, 'element_id'), 'element_screenshot.png')
+    def take_element_screenshot(self, locator, file_name, extra_name=''): # Пример использования:  # self.take_element_screenshot((MobileBy.ID, 'element_id'), 'element_screenshot.png')
+        path_directory = 'screenshots/'
         try:
             element = self.element_is_visible(locator)
-            element.screenshot(file_name)
+            element.screenshot(f"{path_directory}{file_name}{extra_name}.jpg")
             print(f"Скриншот элемента сохранен: {file_name}")
         # except TimeoutException:
         #     print(f"Элемент {locator} не найден для создания скриншота.")
         except Exception as e:
             print(f"Ошибка при создании скриншота элемента: {e}")
+
+    def check_element_is_visible(self, locator):
+        try:
+            element = self.element_is_visible(locator)
+            # Проверка видимости элемента
+            if element.is_displayed():
+                print("Элемент видим на экране")
+            # Проверка активности элемента
+            if element.is_enabled():
+                print("Элемент активен")
+            return True
+        except(Exception):
+            print('Элемент не найден')
+            return False

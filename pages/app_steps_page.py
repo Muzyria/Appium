@@ -50,9 +50,20 @@ class Page(AppiumBasePage):
         self.element_is_visible(self.locators.BUTTON_SETTINGS).click()
 
     def try_make_screenshot(self, extra_name=''):
-        path_directory = 'screenshots/'
-        self.take_screenshot(f"{path_directory}my_screenshot{extra_name}.jpg")
+        self.take_screenshot('my_screen')
 
     def try_make_element_screenshot(self, extra_name=''):
-        path_directory = 'screenshots/'
-        self.take_element_screenshot(self.locators.BUTTON_TIME, f"{path_directory}my_screenshot{extra_name}.jpg")
+        self.take_element_screenshot(self.locators.BUTTON_TIME, 'my_screen_element')
+
+    def try_check_visible_element(self):
+        el = self.check_element_is_visible(self.locators.TEXT_VIEW_NO_ACTIVE_DOWNLOADS)
+
+        if not el:
+            self.touch_action(self.locators.BUTTON_FLAG)
+            self.check_element_is_visible(self.locators.TEXT_VIEW_NO_ACTIVE_DOWNLOADS)
+
+        res = self.element_is_visible(self.locators.TEXT_VIEW_NO_ACTIVE_DOWNLOADS)
+        print(res.text)
+        self.take_element_screenshot(self.locators.TEXT_VIEW_NO_ACTIVE_DOWNLOADS, 'screen_text')
+
+

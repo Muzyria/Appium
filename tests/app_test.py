@@ -43,3 +43,7 @@ class TestFirst:
             el = Page(appium_driver)
             el.try_make_element_screenshot()
 
+        def test_try_check_element_visible(self, appium_driver):
+            el = Page(appium_driver)
+            el.try_check_visible_element()
+
