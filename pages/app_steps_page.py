@@ -43,18 +43,16 @@ class Page(AppiumBasePage):
         self.element_is_visible(self.locators.ANDROID_WIDGET_MENU_BUTTON_SHIP_MODE).click()
     """ - """
 
-
     def play_menu_and_password_to_settings(self):
         """Click button MENU and enter password"""
         self.element_is_visible(self.locators.BUTTON_MENU).click()
         print("CLICk BUTTON MENU")
         self.element_is_visible(self.locators.BUTTON_SETTINGS).click()
 
+    def try_make_screenshot(self, extra_name=''):
+        path_directory = 'screenshots/'
+        self.take_screenshot(f"{path_directory}my_screenshot{extra_name}.jpg")
 
-
-
-
-
-
-
-
+    def try_make_element_screenshot(self, extra_name=''):
+        path_directory = 'screenshots/'
+        self.take_element_screenshot(self.locators.BUTTON_TIME, f"{path_directory}my_screenshot{extra_name}.jpg")

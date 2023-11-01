@@ -90,6 +90,19 @@ class AppiumBasePage:
         """
         self.driver.long_press_keycode(key)
 
+    def take_screenshot(self, file_name):     # Пример использования: self.take_screenshot('screenshot.png')
+        try:
+            self.driver.save_screenshot(file_name)
+            print(f"Скриншот сохранен: {file_name}")
+        except Exception as e:
+            print(f"Ошибка при создании скриншота: {e}")
 
-
-
+    def take_element_screenshot(self, locator, file_name): # Пример использования:  # self.take_element_screenshot((MobileBy.ID, 'element_id'), 'element_screenshot.png')
+        try:
+            element = self.element_is_visible(locator)
+            element.screenshot(file_name)
+            print(f"Скриншот элемента сохранен: {file_name}")
+        # except TimeoutException:
+        #     print(f"Элемент {locator} не найден для создания скриншота.")
+        except Exception as e:
+            print(f"Ошибка при создании скриншота элемента: {e}")

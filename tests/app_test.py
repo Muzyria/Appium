@@ -34,3 +34,12 @@ class TestFirst:
             el.android_menu()
 
             el.go_to_restart()
+
+        def test_try_make_screenshot(self, appium_driver):
+            el = Page(appium_driver)
+            el.try_make_screenshot()
+
+        def test_try_make_element_screenshot(self, appium_driver):
+            el = Page(appium_driver)
+            el.try_make_element_screenshot()
+
