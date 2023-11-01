@@ -62,8 +62,12 @@ class BaseAdbCommands:
         os.system(f'adb -s {self.ip_device} shell input keyevent KEYCODE_APP_SWITCH')
         os.system(f'adb -s {self.ip_device} shell input keyevent DEL')
 
+    def device_get_system_volume_speaker(self):
+        """Get value system volume speaker"""
+        os.system(f'adb -s {self.ip_device} shell settings get system volume_alarm_speaker')
 
-test = BaseAdbCommands(BaseAdbCommands.device_read_ip_address())
+
+test = BaseAdbCommands('192.168.3.235')
 # test.check_devices_active()
 # test.device_reboot()
 # test.device_in_off_hole()
@@ -73,6 +77,7 @@ test = BaseAdbCommands(BaseAdbCommands.device_read_ip_address())
 # test.device_kill_app()
 # test.device_read_ip_address()
 test.device_connect()
+test.device_get_system_volume_speaker()
 
 # def get_value_new_time(self, minutes=1, seconds=10):
 #     """RETURN NEW TIME"""
