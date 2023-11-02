@@ -66,4 +66,14 @@ class Page(AppiumBasePage):
         print(res.text)
         self.take_element_screenshot(self.locators.TEXT_VIEW_NO_ACTIVE_DOWNLOADS, 'screen_text')
 
-
+    def from_main_page_to_settings(self):
+        self.element_is_visible(self.locators.BUTTON_MENU).click()
+        self.element_is_visible(self.locators.BUTTON_SETTINGS).click()
+        # self.element_is_visible(self.locators.BUTTON_ASSET_DETAILS_MENU_SETTINGS)
+        self.element_is_visible(self.locators.BUTTON_1).click()
+        self.element_is_visible(self.locators.BUTTON_2).click()
+        self.element_is_visible(self.locators.BUTTON_3).click()
+        self.element_is_visible(self.locators.BUTTON_9).click()
+        self.element_is_visible(self.locators.BUTTON_9).click()
+        self.element_is_visible(self.locators.BUTTON_9).click()
+        self.element_is_visible(self.locators.BUTTON_SUBMIT).click()

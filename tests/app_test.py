@@ -47,3 +47,6 @@ class TestFirst:
             el = Page(appium_driver)
             el.try_check_visible_element()
 
+        def test_enter_settings_yamatrak(self, appium_driver):
+            el = Page(appium_driver)
+            el.from_main_page_to_settings()
