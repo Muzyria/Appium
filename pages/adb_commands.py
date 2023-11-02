@@ -96,11 +96,11 @@ class BaseAdbCommands:
 
     def open_device_info_settings(self):
         """Open page Settings Device Info"""
-        os.system(f'adb -s {self.ip_device} android.settings.DEVICE_INFO_SETTINGS')
+        os.system(f'adb -s {self.ip_device} shell am start -a android.settings.DEVICE_INFO_SETTINGS')
 
     def open_device_developer_options_settings(self):
         """Open page Settings Developer Options"""
-        os.system(f'adb -s {self.ip_device} android.settings.APPLICATION_DEVELOPMENT_SETTINGS')
+        os.system(f'adb -s {self.ip_device} shell am start -a android.settings.APPLICATION_DEVELOPMENT_SETTINGS')
 
 
 test = BaseAdbCommands('192.168.3.235')
@@ -114,7 +114,7 @@ test = BaseAdbCommands('192.168.3.235')
 # test.device_read_ip_address()
 test.device_connect()
 # test.device_disconnect()
-test.open_date_settings()
+test.open_device_info_settings()
 
 
 # def get_value_new_time(self, minutes=1, seconds=10):
