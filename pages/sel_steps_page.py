@@ -18,7 +18,7 @@ class ControlSyncWiseSteps(BasePage):
     locators = ControlSyncWise()
 
     def login_page(self):
-        self.element_is_visible(self.locators.USER_NAME).send_keys("123123")
-        self.element_is_visible(self.locators.PASSWORD).send_keys("123123")
+        self.element_is_visible(self.locators.USER_NAME).send_keys('superadmin')
+        self.element_is_visible(self.locators.PASSWORD).send_keys('superadmin')
         self.element_is_visible(self.locators.BUTTON_LOGIN).click()
 
