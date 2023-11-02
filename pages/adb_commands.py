@@ -22,6 +22,11 @@ class BaseAdbCommands:
         print(ip_address)
         return ip_address
 
+    def adb_get_state(self):
+        output = os.system('adb get-state')
+        # print(f'{output}')
+        return output
+
     def device_disconnect(self):
         os.system(f'adb disconnect {self.ip_device}')
 
@@ -49,8 +54,7 @@ class BaseAdbCommands:
     def device_in_off_hole(self):
         os.system(f'adb -s {self.ip_device} shell am broadcast -a com.l1inc.yamatrack3d.action.powermanagement.not_on_hole_sleep')
 
-    def device_open_wifi_settings(self):
-        os.system(f'adb -s {self.ip_device} shell am start -a android.settings.WIFI_SETTINGS')
+
 
     def device_close_yamatack(self):
         os.system(f'adb -s {self.ip_device} shell am force-stop com.l1inc.yamatrack3d')
@@ -66,6 +70,22 @@ class BaseAdbCommands:
         """Get value system volume speaker"""
         os.system(f'adb -s {self.ip_device} shell settings get system volume_alarm_speaker')
 
+    """SETTINGS PAGES"""
+    def device_open_settings_main_page(self):
+        os.system(f'adb -s {self.ip_device} shell am start -a android.settings.SETTINGS')
+
+    def device_open_wifi_settings(self):
+        """Open page Settings WI-FI"""
+        os.system(f'adb -s {self.ip_device} shell am start -a android.settings.WIFI_SETTINGS')
+
+    def device_open_sounds_settings(self):
+        """Open page Settings Sounds"""
+        os.system(f'adb -s {self.ip_device} shell am start -a android.settings.SOUND_SETTINGS')
+
+    def open_date_settings(self):
+        """Open page Settings Date"""
+        os.system(f'adb -s {self.ip_device} shell am start -a android.settings.DATE_SETTINGS')
+
 
 test = BaseAdbCommands('192.168.3.235')
 # test.check_devices_active()
@@ -77,7 +97,9 @@ test = BaseAdbCommands('192.168.3.235')
 # test.device_kill_app()
 # test.device_read_ip_address()
 test.device_connect()
-test.device_get_system_volume_speaker()
+# test.device_disconnect()
+test.open_date_settings()
+
 
 # def get_value_new_time(self, minutes=1, seconds=10):
 #     """RETURN NEW TIME"""
@@ -88,12 +110,6 @@ test.device_get_system_volume_speaker()
 #     print(f'Расчетное время power_off_time={hour:02}:{minute:02}')
 #     print()
 #     return f'{hour:02}{minute:02}'
-#
-
-#
-# def adb_get_state(self):
-#     output = os.system('adb get-state')
-#     print(f'{output}-------------')
 #
 # def get_time_off(self):
 #     print('time_off ', end='')
@@ -109,5 +125,3 @@ test.device_get_system_volume_speaker()
 # def put_random_power_off_time(self, time):
 #     os.system(f'adb shell settings put system random_power_off_time {time}')
 #
-# def open_date_settings(self):
-#     os.system('adb shell am start -a android.settings.DATE_SETTINGS')
