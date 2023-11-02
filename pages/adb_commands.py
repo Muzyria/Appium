@@ -54,8 +54,6 @@ class BaseAdbCommands:
     def device_in_off_hole(self):
         os.system(f'adb -s {self.ip_device} shell am broadcast -a com.l1inc.yamatrack3d.action.powermanagement.not_on_hole_sleep')
 
-
-
     def device_close_yamatack(self):
         os.system(f'adb -s {self.ip_device} shell am force-stop com.l1inc.yamatrack3d')
 
@@ -101,17 +99,11 @@ class BaseAdbCommands:
     def open_device_developer_options_settings(self):
         """Open page Settings Developer Options"""
         os.system(f'adb -s {self.ip_device} shell am start -a android.settings.APPLICATION_DEVELOPMENT_SETTINGS')
+    """ - """
 
 
 test = BaseAdbCommands('192.168.3.235')
-# test.check_devices_active()
-# test.device_reboot()
-# test.device_in_off_hole()
-# test.device_open_wifi_settings()
-# test.device_close_all()
-# test.device_close_yamatack()
-# test.device_kill_app()
-# test.device_read_ip_address()
+
 test.device_connect()
 # test.device_disconnect()
 test.open_device_info_settings()
@@ -140,4 +132,3 @@ test.open_device_info_settings()
 #
 # def put_random_power_off_time(self, time):
 #     os.system(f'adb shell settings put system random_power_off_time {time}')
-#
