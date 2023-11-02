@@ -1,20 +1,25 @@
-# import time
-#
-# from pages.sel_base_page import BasePage
-#
-#
-# def test(selenium_driver):
-#     page = BasePage(selenium_driver, 'https://google.com')
-#     page.open()
-#     time.sleep(3)
+import time
 
-import random
+from pages.base_page import BasePage
+from pages.sel_steps_page import ControlSyncWiseSteps
 
 
+class TestControlSyncWise:
+    def test(self, selenium_driver):
+        page = ControlSyncWiseSteps(selenium_driver, 'https://control.syncwise360.com/#login')
+        page.open()
+        time.sleep(3)
+        print('Start test')
+        page.login_page()
+        time.sleep(3)
 
 
-# from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage, ButtonsPage, LinksPage, \
-#     UploadAndDownloadPage, DynamicPropertiesPage
+
+
+
+
+
+
 
 
 
