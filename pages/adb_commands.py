@@ -78,13 +78,29 @@ class BaseAdbCommands:
         """Open page Settings WI-FI"""
         os.system(f'adb -s {self.ip_device} shell am start -a android.settings.WIFI_SETTINGS')
 
+    def device_open_wireless_settings(self):
+        """Open page Settings WireLess"""
+        os.system(f'adb -s {self.ip_device} shell am start -a android.settings.WIRELESS_SETTINGS')
+
     def device_open_sounds_settings(self):
         """Open page Settings Sounds"""
         os.system(f'adb -s {self.ip_device} shell am start -a android.settings.SOUND_SETTINGS')
 
+    def device_open_location_settings(self):
+        """Open page Settings Location"""
+        os.system(f'adb -s {self.ip_device} shell am start -a android.settings.LOCATION_SOURCE_SETTINGS')
+
     def open_date_settings(self):
         """Open page Settings Date"""
         os.system(f'adb -s {self.ip_device} shell am start -a android.settings.DATE_SETTINGS')
+
+    def open_device_info_settings(self):
+        """Open page Settings Device Info"""
+        os.system(f'adb -s {self.ip_device} android.settings.DEVICE_INFO_SETTINGS')
+
+    def open_device_developer_options_settings(self):
+        """Open page Settings Developer Options"""
+        os.system(f'adb -s {self.ip_device} android.settings.APPLICATION_DEVELOPMENT_SETTINGS')
 
 
 test = BaseAdbCommands('192.168.3.235')
