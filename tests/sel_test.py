@@ -19,11 +19,3 @@ class TestControlSyncWise:
         time.sleep(10)
 
 
-
-
-
-
-
-
-
-
