@@ -43,5 +43,20 @@ class ControlSyncWiseSteps(BasePage):
         print(f'Click Device {id_device}')
         time.sleep(2)
 
+    def choose_ota_version_update(self, app_version=None, os_version=None):
+        self.element_is_visible(self.locators.OTA_VERSION_BUTTON_EDIT).click()
+        print('Click Button Edit OTA')
 
+        # self.element_is_visible(self.locators.LIST_OS_VERSION).click()
+
+        # self.element_is_visible(self.locators.LIST_OS_VERSION_VALUE).click()
+        # print('Selected OS Version ')
+
+        self.element_is_visible(self.locators.app_version(app_version)).click()
+        print(f'Selected APK Version {app_version}')
+
+        self.element_is_visible(self.locators.OTA_VERSION_BUTTON_SAVE).click()
+        print('Press Button Save')
+
+        time.sleep(5)
 
