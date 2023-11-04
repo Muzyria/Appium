@@ -18,4 +18,7 @@ class TestControlSyncWise:
 
         time.sleep(10)
 
-
+    def test_2(self, selenium_driver):
+        page_control = ControlSyncWiseSteps(selenium_driver, 'https://syncwise360.com/#login')
+        page_control.open()
+        time.sleep(3)
