@@ -48,6 +48,9 @@ class BaseAdbCommands:
             time.sleep(2)
             self.device_connect()
 
+    def touch_screen(self, x=700, y=500):
+        os.system(f'adb -s {self.ip_device} shell input tap {x} {y}')
+
     def device_in_cart_barn(self):
         os.system(f'adb -s {self.ip_device} shell am broadcast -a com.l1inc.yamatrack3d.action.powermanagement.cart_barn_sleep')
 
@@ -102,11 +105,16 @@ class BaseAdbCommands:
     """ - """
 
 
-test = BaseAdbCommands('192.168.3.235')
+test = BaseAdbCommands('192.168.3.219')
 
 test.device_connect()
 # test.device_disconnect()
-test.open_device_info_settings()
+test.device_in_cart_barn()
+print('in to cart barn')
+time.sleep(30)
+print('time is over')
+test.touch_screen()
+print('touch ')
 
 
 # def get_value_new_time(self, minutes=1, seconds=10):
