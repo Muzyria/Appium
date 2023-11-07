@@ -45,14 +45,13 @@ class ControlSyncWiseSteps(BasePage):
         print(f'Click Device {id_device}')
         time.sleep(2)
 
-    def choose_ota_version_update(self, app_version=None, os_version=None):
+    def choose_ota_version_press_button_edit(self, app_version=None, os_version=None):
         self.element_is_visible(self.locators.OTA_VERSION_BUTTON_EDIT).click()
         print('Click Button Edit OTA')
 
-        # self.element_is_visible(self.locators.LIST_OS_VERSION).click()
-
-        # self.element_is_visible(self.locators.LIST_OS_VERSION_VALUE).click()
-        # print('Selected OS Version ')
+    def choose_ota_version_update(self, app_version=None, os_version=None):
+        self.element_is_visible(self.locators.OTA_VERSION_BUTTON_EDIT).click()
+        print('Click Button Edit OTA')
 
         self.element_is_visible(self.locators.app_version(app_version)).click()
         print(f'Selected APK Version {app_version}')
@@ -62,3 +61,12 @@ class ControlSyncWiseSteps(BasePage):
 
         time.sleep(5)
 
+    def web_control_remove_app_update(self):
+        self.element_is_visible(self.locators.BUTTON_REMOVE_APP_UPDATE).click()
+
+    def web_control_remove_os_update(self):
+        self.element_is_visible(self.locators.BUTTON_REMOVE_APP_UPDATE).click()
+
+    def web_control_log_out(self):
+        self.element_is_visible(self.locators.BUTTON_LOG_OUT).click()
+        print("Button Log Out Press")

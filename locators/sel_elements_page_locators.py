@@ -30,13 +30,9 @@ class ControlSyncWise:
         return (By.CSS_SELECTOR, f'select[name="osVersion"] option[value="{text}"]')
     LIST_OS_VERSION_VALUE = (By.CSS_SELECTOR, 'select[name="osVersion"] option[value="2.12.0_E"]')
 
-
-
     OTA_VERSION_BUTTON_SAVE = (By.XPATH, '//*[@id="workarea"]/div[2]/section/div[5]/div[2]/div[3]/div[2]/div[2]')
 
-    BUTTON_LOG_OUT = (By.CSS_SELECTOR, '')
+    BUTTON_REMOVE_APP_UPDATE = (By.CSS_SELECTOR, 'div [class="bt delete-app-update"]')
+    BUTTON_REMOVE_OS_UPDATE = (By.CSS_SELECTOR, 'div [class="bt delete-os-update"]')
 
-
-
-
-
+    BUTTON_LOG_OUT = (By.CSS_SELECTOR, 'div [id="logout"]')

@@ -57,21 +57,22 @@ class TestFirst:
         #     el.from_main_page_to_settings()
 
         def test_a(self, appium_driver, selenium_driver):
-            # device = Page(appium_driver)
-            # device.first()
+            device = Page(appium_driver)
+            device.first()
 
             web_control = TestControlSyncWise.TestSelFirst()
-            web_control.test(selenium_driver)
-
+            web_control.test_choose_app(selenium_driver)
 
             web_syncwise = TestControlSyncWise.TestSelSecond()
             web_syncwise.test_2(selenium_driver)
 
-            # device.second()
+            device.second()
 
-            web_control.test(selenium_driver)
+            web_control.test_remove_app(selenium_driver)
 
-            # device.from_main_page_to_settings()
+            web_control.test_choose_app(selenium_driver)
+
+            device.from_main_page_to_settings()
 
             self.adb_device.device_close_yamatack()
 
