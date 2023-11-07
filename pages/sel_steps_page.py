@@ -25,6 +25,8 @@ class ControlSyncWiseSteps(BasePage):
         self.element_is_visible(self.locators.BUTTON_LOGIN).click()
         print("Click BUTTON LOG IN")
 
+
+
     def search_course(self, data_search):
         input_search = self.element_is_visible(self.locators.FIELD_SEARCH)
         input_search.send_keys(data_search)

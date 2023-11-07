@@ -10,6 +10,10 @@ class Page(AppiumBasePage):
         self.element_is_visible(self.locators.BUTTON_MENU).click()
         print("CLICk BUTTON MENU")
 
+    def second(self):
+        self.element_is_visible(self.locators.BUTTON_PLAY_GOLF).click()
+        print("CLICk BUTTON PLAY GOLF")
+
     def click_flag(self):
         self.touch_action(self.locators.BUTTON_FLAG)
 

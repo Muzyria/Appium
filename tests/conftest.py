@@ -10,6 +10,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 # Фикстура для Selenium
 @pytest.fixture(scope="function")
 def selenium_driver():
+    print('Start Selenium Fixture')
     sel_driver = selenium_webdriver.Chrome(ChromeDriverManager().install())
     sel_driver.maximize_window()
     yield sel_driver
@@ -19,6 +20,7 @@ def selenium_driver():
 # Фикстура для Appium
 @pytest.fixture(scope="function")
 def appium_driver():
+    print('Start Appium Fixture')
     capabilities = dict(
         platformName='android',
         automationName='uiautomator2',

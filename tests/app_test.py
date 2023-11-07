@@ -2,11 +2,14 @@ import time
 
 from pages.app_steps_page import Page
 from sel_test import TestControlSyncWise
+from pages.adb_commands import BaseAdbCommands
 
 
 class TestFirst:
 
     class TestAppFirst:
+        adb_device = BaseAdbCommands('192.168.3.219')
+        adb_device.check_devices_active()
 
         def test_1(self, appium_driver):
             el = Page(appium_driver)
@@ -53,8 +56,22 @@ class TestFirst:
         #     el = Page(appium_driver)
         #     el.from_main_page_to_settings()
 
-        def test_a(self, selenium_driver):
-            b = TestControlSyncWise.TestSelFirst()
-            c = TestControlSyncWise.TestSelSecond()
-            # c.test_2(selenium_driver)
-            # b.test(selenium_driver)
+        def test_a(self, appium_driver, selenium_driver):
+            # device = Page(appium_driver)
+            # device.first()
+
+            web_control = TestControlSyncWise.TestSelFirst()
+            web_control.test(selenium_driver)
+
+
+            web_syncwise = TestControlSyncWise.TestSelSecond()
+            web_syncwise.test_2(selenium_driver)
+
+            # device.second()
+
+            web_control.test(selenium_driver)
+
+            # device.from_main_page_to_settings()
+
+            self.adb_device.device_close_yamatack()
+

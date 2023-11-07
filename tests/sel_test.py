@@ -16,8 +16,8 @@ class TestControlSyncWise:
             page_control.click_device_in_manage_device("S10150000211018049")
 
             page_control.choose_ota_version_update('2.1.71')
+            time.sleep(5)
 
-            time.sleep(10)
 
     class TestSelSecond:
         def test_2(self, selenium_driver):

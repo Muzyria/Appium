@@ -111,7 +111,7 @@ class BaseAdbCommands:
     """ - """
 
 
-test = BaseAdbCommands('192.168.3.219')
+# test = BaseAdbCommands('192.168.3.219')
 
 # test.device_connect()
 # test.device_disconnect()
@@ -122,7 +122,7 @@ test = BaseAdbCommands('192.168.3.219')
 # test.touch_screen()
 # print('touch ')
 
-test.check_devices_active()
+# test.check_devices_active()
 
 
 # def get_value_new_time(self, minutes=1, seconds=10):

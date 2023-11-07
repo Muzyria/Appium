@@ -34,6 +34,8 @@ class ControlSyncWise:
 
     OTA_VERSION_BUTTON_SAVE = (By.XPATH, '//*[@id="workarea"]/div[2]/section/div[5]/div[2]/div[3]/div[2]/div[2]')
 
+    BUTTON_LOG_OUT = (By.CSS_SELECTOR, '')
+
 
 
 
