@@ -3,6 +3,7 @@ import time
 from pages.app_steps_page import Page
 from sel_test import TestControlSyncWise
 from pages.adb_commands import BaseAdbCommands
+from locators.app_elements_page_locators import MainScreen
 
 
 class TestFirst:
@@ -60,19 +61,26 @@ class TestFirst:
             device = Page(appium_driver)
             device.first()
 
-            web_control = TestControlSyncWise.TestSelFirst()
-            web_control.test_choose_app(selenium_driver)
-
-            web_syncwise = TestControlSyncWise.TestSelSecond()
-            web_syncwise.test_2(selenium_driver)
+            # web_control = TestControlSyncWise.TestSelFirst()
+            # web_control.test_choose_app(selenium_driver)
+            #
+            # web_syncwise = TestControlSyncWise.TestSelSecond()
+            # web_syncwise.test_2(selenium_driver)
 
             device.second()
 
-            web_control.test_remove_app(selenium_driver)
-
-            web_control.test_choose_app(selenium_driver)
+            # web_control.test_remove_app(selenium_driver)
+            #
+            # web_control.test_choose_app(selenium_driver)
 
             device.from_main_page_to_settings()
+            device.third()
+            device.swipe_screen_down()
+            device.take_element_screenshot(MainScreen.TEXT_VIEW_APPLICATION_VERSION_APK_VALUE_ASSET_DETAILS, 'apk_version')
 
-            self.adb_device.device_close_yamatack()
+            # web_control.test_remove_app(selenium_driver)
+
+            # self.adb_device.device_close_yamatack()
+
+
 

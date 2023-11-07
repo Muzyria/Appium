@@ -14,6 +14,10 @@ class Page(AppiumBasePage):
         self.element_is_visible(self.locators.BUTTON_PLAY_GOLF).click()
         print("CLICk BUTTON PLAY GOLF")
 
+    def third(self):
+        self.element_is_visible(self.locators.BUTTON_ASSET_DETAILS_MENU_SETTINGS).click()
+        print("CLICk BUTTON ASSET DETAILS")
+
     def click_flag(self):
         self.touch_action(self.locators.BUTTON_FLAG)
 
@@ -55,8 +59,8 @@ class Page(AppiumBasePage):
     def try_make_screenshot(self, extra_name=''):
         self.take_screenshot('my_screen')
 
-    def try_make_element_screenshot(self, extra_name=''):
-        self.take_element_screenshot(self.locators.BUTTON_TIME, 'my_screen_element')
+    def try_make_element_screenshot(self, element, extra_name=''):
+        self.take_element_screenshot(element, 'my_screen_element')
 
     def try_check_visible_element(self):
         el = self.check_element_is_visible(self.locators.TEXT_VIEW_NO_ACTIVE_DOWNLOADS)

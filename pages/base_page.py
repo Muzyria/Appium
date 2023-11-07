@@ -62,13 +62,13 @@ class AppiumBasePage:
         print(self.driver.get_window_size()['height'])
         self.driver.swipe(start_coordinate[0], start_coordinate[1], end_coordinate[0], end_coordinate[1], duration)
 
-    def swipe_screen_down(self, duration=1000):  # Продолжительность свайпа в миллисекундах
+    def swipe_screen_down(self, duration=200):  # Продолжительность свайпа в миллисекундах
         start_x = self.driver.get_window_size()['width'] // 2
         start_y = self.driver.get_window_size()['height'] * 0.8
         end_y = self.driver.get_window_size()['height'] * 0.2
         self.driver.swipe(start_x, start_y, start_x, end_y, duration)  # Прокрутка вниз
 
-    def swipe_screen_up(self, duration=1000):  # Продолжительность свайпа в миллисекундах
+    def swipe_screen_up(self, duration=200):  # Продолжительность свайпа в миллисекундах
         start_x = self.driver.get_window_size()['width'] // 2
         start_y = self.driver.get_window_size()['height'] * 0.8
         end_y = self.driver.get_window_size()['height'] * 0.2

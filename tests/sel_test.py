@@ -14,9 +14,9 @@ class TestControlSyncWise:
             page_control.login_page_enter_control()
             page_control.search_course("Superior")
             page_control.click_device_in_manage_device("S10150000211018049")
-
+            time.sleep(3)
             page_control.choose_ota_version_update('2.1.71')
-            time.sleep(10)
+            time.sleep(2)
             page_control.web_control_log_out()
 
         def test_remove_app(self, selenium_driver):
@@ -27,11 +27,12 @@ class TestControlSyncWise:
             page_control.login_page_enter_control()
             page_control.search_course("Superior")
             page_control.click_device_in_manage_device("S10150000211018049")
+            time.sleep(3)
             page_control.choose_ota_version_press_button_edit()
             print('Click Button Edit OTA')
 
             page_control.web_control_remove_app_update()
-            time.sleep(10)
+            time.sleep(2)
             page_control.web_control_log_out()
 
     class TestSelSecond:
