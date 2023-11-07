@@ -49,11 +49,13 @@ class BaseAdbCommands:
             self.device_connect()
 
     def device_send_key(self, key=26):
-
         os.system(f'adb -s {self.ip_device} shell input keyevent {key}')
 
     def touch_screen(self, x=700, y=500):
         os.system(f'adb -s {self.ip_device} shell input tap {x} {y}')
+
+    def device_send_coordinate(self, location):
+        os.system(rf'adb -s {self.ip_device}:5555 shell am broadcast -a ua.org.jeff.mockgps.ACTION_LOCATION --es location \"{location}\"')  # "50.012356,36.243361"
 
     def device_in_cart_barn(self):
         os.system(f'adb -s {self.ip_device} shell am broadcast -a com.l1inc.yamatrack3d.action.powermanagement.cart_barn_sleep')
