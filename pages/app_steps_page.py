@@ -18,6 +18,9 @@ class Page(AppiumBasePage):
         self.element_is_visible(self.locators.BUTTON_ASSET_DETAILS_MENU_SETTINGS).click()
         print("CLICk BUTTON ASSET DETAILS")
 
+    def fourth(self):
+        return self.element_is_visible(self.locators.TEXT_VIEW_APPLICATION_VERSION_APK_VALUE_ASSET_DETAILS).text
+
     def click_flag(self):
         self.touch_action(self.locators.BUTTON_FLAG)
 
@@ -28,8 +31,8 @@ class Page(AppiumBasePage):
 
     def swipe_my_up(self):
         self.swipe_screen_up()
-        self.swipe_screen_up()
-        self.swipe_screen_up()
+        # self.swipe_screen_up()
+        # self.swipe_screen_up()
 
     """Android menu and options"""
     def android_menu(self):
