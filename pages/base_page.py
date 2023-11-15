@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
@@ -67,12 +69,14 @@ class AppiumBasePage:
         start_y = self.driver.get_window_size()['height'] * 0.8
         end_y = self.driver.get_window_size()['height'] * 0.2
         self.driver.swipe(start_x, start_y, start_x, end_y, duration)  # Прокрутка вниз
+        time.sleep(1)
 
     def swipe_screen_up(self, duration=200):  # Продолжительность свайпа в миллисекундах
         start_x = self.driver.get_window_size()['width'] // 2
         start_y = self.driver.get_window_size()['height'] * 0.8
         end_y = self.driver.get_window_size()['height'] * 0.2
         self.driver.swipe(start_x, end_y, start_x, start_y, duration)  # Прокрутка вверх
+        time.sleep(1)
 
     def press_key(self, key):
         """

@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 
 from pages.base_page import BasePage
-from locators.sel_elements_page_locators import ControlSyncWise
+from locators.sel_elements_page_locators import ControlSyncWise, SyncWise
 
 from selenium.webdriver import Keys
 
@@ -70,3 +70,22 @@ class ControlSyncWiseSteps(BasePage):
     def web_control_log_out(self):
         self.element_is_visible(self.locators.BUTTON_LOG_OUT).click()
         print("Button Log Out Press")
+
+
+class SyncWiseSteps(BasePage):
+    locators = SyncWise()
+
+    def login_page_enter_syncwise(self):
+        self.element_is_visible(self.locators.USER_NAME).send_keys('QA')
+        print("Input LOGIN")
+        self.element_is_visible(self.locators.PASSWORD).send_keys('Qwerty01!')
+        print("Input PASSWORD")
+        self.element_is_visible(self.locators.BUTTON_LOGIN).click()
+        print("Click BUTTON LOG IN")
+
+    def choose_assert_device_name(self):
+        self.element_is_visible(self.locators.BUTTON_ASSERT).click()
+        print("Click BUTTON ASSERT")
+        self.element_is_visible(self.locators.find_by_text('49')).click()
+
+

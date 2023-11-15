@@ -36,3 +36,17 @@ class ControlSyncWise:
     BUTTON_REMOVE_OS_UPDATE = (By.CSS_SELECTOR, 'div [class="bt delete-os-update"]')
 
     BUTTON_LOG_OUT = (By.CSS_SELECTOR, 'div [id="logout"]')
+
+
+class SyncWise:
+    """Login Page"""
+    USER_NAME = (By.CSS_SELECTOR, 'input#login-form-username')
+    PASSWORD = (By.CSS_SELECTOR, 'input#login-form-password')
+    BUTTON_LOGIN = (By.CSS_SELECTOR, 'button#login-form-submit')
+
+    BUTTON_ASSERT = (By.CSS_SELECTOR, 'div.btn-assets')
+
+    @staticmethod
+    def find_by_text(text):
+        return (By.XPATH, f'//*[text()="{text}"]')
+
