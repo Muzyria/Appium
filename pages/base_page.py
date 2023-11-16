@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.mobileby import AppiumBy
 from appium.webdriver.common.touch_action import TouchAction
 from appium import webdriver
-
+import pyautogui
 
 class BasePage:
     def __init__(self, driver, url):
@@ -37,18 +37,24 @@ class BasePage:
     def go_to_element(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
-    def scroll_element_by_mouse(self, element):
-        div_width = element.size['width']
-        div_height = element.size['height']
-
+    def move_coursor_to_elrment(self, element):
+        div_rect = element.rect
         # Получаем координаты центра элемента
-        center_x = div_width / 2
-        center_y = div_height / 2
-        # Наводим курсор на центр элемента
-        actions = ActionChains(self.driver)
-        actions.move_to_element_with_offset(element, center_x, center_y)
-        # Прокручиваем колесико мыши
-        actions.perform()
+        center_x = div_rect['x'] + div_rect['width'] // 2
+        center_y = div_rect['y'] + div_rect['height'] // 2
+        # Перемещаем курсор в центр элемента
+        pyautogui.moveTo(center_x, center_y, duration=0.5)
+
+    def scroll_element_by_mouse(self, element):
+        div_rect = element.rect
+        # Получаем координаты центра элемента
+        center_x = div_rect['x'] + div_rect['width'] // 2
+        center_y = div_rect['y'] + div_rect['height'] // 2
+        # Перемещаем курсор в центр элемента
+        pyautogui.moveTo(center_x, center_y, duration=0.5)
+        # Выполняем прокрутку колесика мыши (на 3 шага вперед)
+        pyautogui.scroll(-500)
+        time.sleep(1)
 
 
     def action_double_click(self, element):

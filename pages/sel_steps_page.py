@@ -89,11 +89,11 @@ class SyncWiseSteps(BasePage):
         self.element_is_visible(self.locators.find_by_text('49')).click()
 
     def asset_details_values(self):
-        # self.element_is_present(self.locators.ASSET_DETAILS_SERIAL_NUMBER).click()
+        asset_list = self.element_is_present(self.locators.ASSET_DETAILS_LIST)
+        # self.scroll_element_by_mouse(self.element_is_visible(self.locators.ASSET_DETAILS_LIST))
 
-        self.go_to_element(self.locators.ASSET_DETAILS_APK_VERSION)
-
-
+        self.go_to_element(self.element_is_visible(self.locators.ASSET_DETAILS_APK_VERSION))
+        time.sleep(10)
 
         current_apk_version = self.element_is_visible(self.locators.ASSET_DETAILS_APK_VERSION).text
         return current_apk_version

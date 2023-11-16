@@ -63,8 +63,10 @@ class TestControlSyncWise:
             page_syncwice.login_page_enter_syncwise()
             time.sleep(5)
             page_syncwice.choose_assert_device_name()
-            time.sleep(15)
+            time.sleep(5)
+            page_syncwice.asset_details_values()
 
-            print(page_syncwice.asset_details_values())
+
+
 
 
