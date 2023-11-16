@@ -50,3 +50,9 @@ class SyncWise:
     def find_by_text(text):
         return (By.XPATH, f'//*[text()="{text}"]')
 
+    ASSET_DETAILS_LIST = (By.CSS_SELECTOR, "div.stretched-box.scrollable.null-scrollbar.relative")
+    ASSET_DETAILS_SERIAL_NUMBER = (By.CSS_SELECTOR, "div.row.serial-number")
+    ASSET_DETAILS_APK_VERSION = (By.CSS_SELECTOR, "div.row.app-version .data .val")
+
+
+

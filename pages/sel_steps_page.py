@@ -7,7 +7,7 @@ import requests
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 
-
+from selenium.webdriver.common.keys import Keys
 from pages.base_page import BasePage
 from locators.sel_elements_page_locators import ControlSyncWise, SyncWise
 
@@ -87,5 +87,15 @@ class SyncWiseSteps(BasePage):
         self.element_is_visible(self.locators.BUTTON_ASSERT).click()
         print("Click BUTTON ASSERT")
         self.element_is_visible(self.locators.find_by_text('49')).click()
+
+    def asset_details_values(self):
+        # self.element_is_present(self.locators.ASSET_DETAILS_SERIAL_NUMBER).click()
+
+        self.go_to_element(self.locators.ASSET_DETAILS_APK_VERSION)
+
+
+
+        current_apk_version = self.element_is_visible(self.locators.ASSET_DETAILS_APK_VERSION).text
+        return current_apk_version
 
 

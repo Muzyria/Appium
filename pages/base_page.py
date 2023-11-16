@@ -37,6 +37,20 @@ class BasePage:
     def go_to_element(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
+    def scroll_element_by_mouse(self, element):
+        div_width = element.size['width']
+        div_height = element.size['height']
+
+        # Получаем координаты центра элемента
+        center_x = div_width / 2
+        center_y = div_height / 2
+        # Наводим курсор на центр элемента
+        actions = ActionChains(self.driver)
+        actions.move_to_element_with_offset(element, center_x, center_y)
+        # Прокручиваем колесико мыши
+        actions.perform()
+
+
     def action_double_click(self, element):
         action = ActionChains(self.driver)
         action.double_click(element)
