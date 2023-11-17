@@ -4,7 +4,7 @@ import random
 import time
 
 import requests
-from selenium.common import TimeoutException
+from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.by import By
 
 from selenium.webdriver.common.keys import Keys
@@ -89,13 +89,23 @@ class SyncWiseSteps(BasePage):
         self.element_is_visible(self.locators.find_by_text('49')).click()
 
     def asset_details_values(self):
-        asset_list = self.element_is_present(self.locators.ASSET_DETAILS_LIST)
         # self.scroll_element_by_mouse(self.element_is_visible(self.locators.ASSET_DETAILS_LIST))
-
         self.go_to_element(self.element_is_visible(self.locators.ASSET_DETAILS_APK_VERSION))
-        time.sleep(10)
 
-        current_apk_version = self.element_is_visible(self.locators.ASSET_DETAILS_APK_VERSION).text
-        return current_apk_version
+        # try:
+        #     cable_voltage = self.element_is_visible(self.locators.ASSET_DETAILS_CABLE_VOLTAGE).text
+        # except TimeoutException:
+        #     cable_voltage = None
 
+        os_fw = self.element_is_visible(self.locators.ASSET_DETAILS_OS_VERSION).text
+        apk_fw = self.element_is_visible(self.locators.ASSET_DETAILS_APK_VERSION).text
+        cable_fw = self.element_is_visible(self.locators.ASSET_DETAILS_CABLE_FW_VERSION).text
+        gps_fw = [i.text for i in self.elements_are_present(self.locators.ASSET_DETAILS_GPS_FW_VERSION)]
 
+        return {
+            # 'cable_voltage': cable_voltage,
+            'os_fw': os_fw,
+            'apk_fw': apk_fw,
+            'cable_fw': cable_fw,
+            'gps_fw': gps_fw[0] if gps_fw else None
+        }

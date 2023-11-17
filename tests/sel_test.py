@@ -64,7 +64,8 @@ class TestControlSyncWise:
             time.sleep(5)
             page_syncwice.choose_assert_device_name()
             time.sleep(5)
-            page_syncwice.asset_details_values()
+            data = page_syncwice.asset_details_values()
+            print(data)
 
 
 

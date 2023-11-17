@@ -52,7 +52,12 @@ class SyncWise:
 
     ASSET_DETAILS_LIST = (By.CSS_SELECTOR, "div.stretched-box.scrollable.null-scrollbar.relative")
     ASSET_DETAILS_SERIAL_NUMBER = (By.CSS_SELECTOR, "div.row.serial-number")
+
+    ASSET_DETAILS_CABLE_VOLTAGE = (By.CSS_SELECTOR, "div.row.cable-voltage .data .val")
+    ASSET_DETAILS_OS_VERSION = (By.CSS_SELECTOR, "div.row.os-version .data .val")
     ASSET_DETAILS_APK_VERSION = (By.CSS_SELECTOR, "div.row.app-version .data .val")
+    ASSET_DETAILS_CABLE_FW_VERSION = (By.CSS_SELECTOR, "div.row.cable-firmware-version .data .val")
+    ASSET_DETAILS_GPS_FW_VERSION = (By.CSS_SELECTOR, "div.row.gps-firmware-version .data .val")
 
 
 

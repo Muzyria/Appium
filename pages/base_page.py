@@ -52,10 +52,9 @@ class BasePage:
         center_y = div_rect['y'] + div_rect['height'] // 2
         # Перемещаем курсор в центр элемента
         pyautogui.moveTo(center_x, center_y, duration=0.5)
-        # Выполняем прокрутку колесика мыши (на 3 шага вперед)
+        # Выполняем прокрутку колесика мыши
         pyautogui.scroll(-500)
         time.sleep(1)
-
 
     def action_double_click(self, element):
         action = ActionChains(self.driver)
