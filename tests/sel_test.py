@@ -67,8 +67,4 @@ class TestControlSyncWise:
             data = page_syncwice.asset_details_values()
             print(data)
             page_syncwice.web_sync_log_out()
-
-
-
-
-
+            return data
