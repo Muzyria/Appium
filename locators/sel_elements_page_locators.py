@@ -3,9 +3,9 @@ from selenium.webdriver.common.by import By
 
 class ControlSyncWise:
     """Login Page"""
-    USER_NAME = (By.XPATH, '//input[@id="username"]')
-    PASSWORD = (By.XPATH, '//input[@id="password"]')
-    BUTTON_LOGIN = (By.XPATH, '//button[@id="btn-submit"]')
+    USER_NAME_CONTROL = (By.XPATH, '//input[@id="username"]')
+    PASSWORD_CONTROL = (By.XPATH, '//input[@id="password"]')
+    BUTTON_LOGIN_CONTROL = (By.XPATH, '//button[@id="btn-submit"]')
 
     FIELD_SEARCH = (By.XPATH, '//input[@class="search"]')
 
@@ -35,14 +35,14 @@ class ControlSyncWise:
     BUTTON_REMOVE_APP_UPDATE = (By.CSS_SELECTOR, 'div [class="bt delete-app-update"]')
     BUTTON_REMOVE_OS_UPDATE = (By.CSS_SELECTOR, 'div [class="bt delete-os-update"]')
 
-    BUTTON_LOG_OUT = (By.CSS_SELECTOR, 'div [id="logout"]')
+    BUTTON_LOG_OUT_CONTROL = (By.CSS_SELECTOR, 'div [id="logout"]')
 
 
 class SyncWise:
     """Login Page"""
-    USER_NAME = (By.CSS_SELECTOR, 'input#login-form-username')
-    PASSWORD = (By.CSS_SELECTOR, 'input#login-form-password')
-    BUTTON_LOGIN = (By.CSS_SELECTOR, 'button#login-form-submit')
+    USER_NAME_SYNC = (By.CSS_SELECTOR, 'input#login-form-username')
+    PASSWORD_SYNC = (By.CSS_SELECTOR, 'input#login-form-password')
+    BUTTON_LOGIN_SYNC = (By.CSS_SELECTOR, 'button#login-form-submit')
 
     BUTTON_ASSERT = (By.CSS_SELECTOR, 'div.btn-assets')
 
@@ -59,5 +59,4 @@ class SyncWise:
     ASSET_DETAILS_CABLE_FW_VERSION = (By.CSS_SELECTOR, "div.row.cable-firmware-version .data .val")
     ASSET_DETAILS_GPS_FW_VERSION = (By.CSS_SELECTOR, "div.row.gps-firmware-version .data .val")
 
-
-
+    BUTTON_LOG_OUT_SYNC = (By.CSS_SELECTOR, "span#span-logout")

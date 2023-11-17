@@ -18,11 +18,11 @@ class ControlSyncWiseSteps(BasePage):
     locators = ControlSyncWise()
 
     def login_page_enter_control(self):
-        self.element_is_visible(self.locators.USER_NAME).send_keys('superadmin')
+        self.element_is_visible(self.locators.USER_NAME_CONTROL).send_keys('superadmin')
         print("Input LOGIN")
-        self.element_is_visible(self.locators.PASSWORD).send_keys('superadmin')
+        self.element_is_visible(self.locators.PASSWORD_CONTROL).send_keys('superadmin')
         print("Input PASSWORD")
-        self.element_is_visible(self.locators.BUTTON_LOGIN).click()
+        self.element_is_visible(self.locators.BUTTON_LOGIN_CONTROL).click()
         print("Click BUTTON LOG IN")
 
 
@@ -68,7 +68,7 @@ class ControlSyncWiseSteps(BasePage):
         self.element_is_visible(self.locators.BUTTON_REMOVE_APP_UPDATE).click()
 
     def web_control_log_out(self):
-        self.element_is_visible(self.locators.BUTTON_LOG_OUT).click()
+        self.element_is_visible(self.locators.BUTTON_LOG_OUT_CONTROL).click()
         print("Button Log Out Press")
 
 
@@ -76,11 +76,11 @@ class SyncWiseSteps(BasePage):
     locators = SyncWise()
 
     def login_page_enter_syncwise(self):
-        self.element_is_visible(self.locators.USER_NAME).send_keys('QA')
+        self.element_is_visible(self.locators.USER_NAME_SYNC).send_keys('QA')
         print("Input LOGIN")
-        self.element_is_visible(self.locators.PASSWORD).send_keys('Qwerty01!')
+        self.element_is_visible(self.locators.PASSWORD_SYNC).send_keys('Qwerty01!')
         print("Input PASSWORD")
-        self.element_is_visible(self.locators.BUTTON_LOGIN).click()
+        self.element_is_visible(self.locators.BUTTON_LOGIN_SYNC).click()
         print("Click BUTTON LOG IN")
 
     def choose_assert_device_name(self):
@@ -91,12 +91,10 @@ class SyncWiseSteps(BasePage):
     def asset_details_values(self):
         # self.scroll_element_by_mouse(self.element_is_visible(self.locators.ASSET_DETAILS_LIST))
         self.go_to_element(self.element_is_visible(self.locators.ASSET_DETAILS_APK_VERSION))
-
         # try:
         #     cable_voltage = self.element_is_visible(self.locators.ASSET_DETAILS_CABLE_VOLTAGE).text
         # except TimeoutException:
         #     cable_voltage = None
-
         os_fw = self.element_is_visible(self.locators.ASSET_DETAILS_OS_VERSION).text
         apk_fw = self.element_is_visible(self.locators.ASSET_DETAILS_APK_VERSION).text
         cable_fw = self.element_is_visible(self.locators.ASSET_DETAILS_CABLE_FW_VERSION).text
@@ -109,3 +107,7 @@ class SyncWiseSteps(BasePage):
             'cable_fw': cable_fw,
             'gps_fw': gps_fw[0] if gps_fw else None
         }
+
+    def web_sync_log_out(self):
+        self.element_is_visible(self.locators.BUTTON_LOG_OUT_SYNC).click()
+        print("Button Log Out Press")

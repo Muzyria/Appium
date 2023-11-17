@@ -56,7 +56,7 @@ class TestControlSyncWise:
             self.main_os_version = main_os_version
             self.update_os_version = update_os_version
 
-        def check_assets_details(self, selenium_driver):
+        def test_check_assets_details(self, selenium_driver):
             page_syncwice = SyncWiseSteps(selenium_driver, self.url)
             page_syncwice.open()
             time.sleep(5)
@@ -66,6 +66,7 @@ class TestControlSyncWise:
             time.sleep(5)
             data = page_syncwice.asset_details_values()
             print(data)
+            page_syncwice.web_sync_log_out()
 
 
 

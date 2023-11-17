@@ -50,7 +50,7 @@ class TestFirst:
             # web_control.test_choose_app(selenium_driver)
 
             web_syncwise = TestControlSyncWise.TestSelSecond(**payloads_syncwise_dev['superior'])
-            web_syncwise.check_assets_details(selenium_driver)
+            web_syncwise.test_check_assets_details(selenium_driver)
 
             # web_control.test_remove_app(selenium_driver)
             #
