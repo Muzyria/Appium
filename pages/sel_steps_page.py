@@ -111,3 +111,4 @@ class SyncWiseSteps(BasePage):
     def web_sync_log_out(self):
         self.element_is_visible(self.locators.BUTTON_LOG_OUT_SYNC).click()
         print("Button Log Out Press")
+
