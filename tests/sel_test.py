@@ -68,3 +68,7 @@ class TestControlSyncWise:
             print(data)
             page_syncwice.web_sync_log_out()
             return data
+
+
+
+

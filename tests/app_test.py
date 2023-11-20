@@ -47,7 +47,7 @@ class TestFirst:
         def test_case_one(self,  selenium_driver, appium_driver):
             device = AutomaticAPKOSUpdate(appium_driver)
 
-            web_syncwise = TestControlSyncWise.TestSelSecond(**payloads_syncwise_dev['superior'])
+            web_syncwise = TestControlSyncWise.TestSelSecond(**payloads_syncwise_live['superior'])
             web_syncwise.test_check_assets_details(selenium_driver)
 
             # web_control = TestControlSyncWise.TestSelFirst(**payloads_control_dev['superior'])
