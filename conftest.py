@@ -1,4 +1,3 @@
-import time
 
 import pytest
 from selenium import webdriver as selenium_webdriver
@@ -31,6 +30,33 @@ def appium_driver():
     app_driver.quit()
 
 
-# def test_appium_example(appium_driver):
-#     el = appium_driver.find_element(by=AppiumBy.ID, value='com.l1inc.yamatrack3d:id/buttonMenu')
-#     el.click()
+
+"""
+import pytest
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+
+
+def pytest_addoption(parser):
+    '''Опции командной строки.
+    В командную строку передается параметр вида '--language="es"'
+    По умолчанию передается параметр, включающий английский интерфейс в браузере
+    '''
+    parser.addoption('--language', action='store', default='en',
+                     help="Choose language: ---")
+
+
+@pytest.fixture(scope="function")
+def browser(request):
+    print("___USE MAIN FIXTURE__")
+    print("\nstart browser for test..")
+    options = Options()
+    user_language = request.config.getoption("language")
+    options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
+    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    yield browser
+    print("\nquit browser..")
+    browser.quit()
+"""

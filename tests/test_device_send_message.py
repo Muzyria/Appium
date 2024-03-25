@@ -1,42 +1,10 @@
 import time
 
 from pages.app_steps_page import AutomaticAPKOSUpdate
-from sel_test import TestControlSyncWise
+
 from pages.adb_commands import BaseAdbCommands
-from locators.android_locators import MainScreen
 
-payloads_control_live = {'superior': {
-    "url": "https://control.syncwise360.com/#login",
-    "device_id": "S10150000211018049",
-    "course_name": "Superior",
-    "main_apk_version": "2.1.95",
-    "update_apk_version": "2.1.71",
-    "main_os_version": "2.14.3_E",
-    "update_os_version": "2.12.0"
-}
-}
 
-payloads_control_dev = {'superior': {
-    "url": "https://dev-control.syncwise360.com/#login",
-    "device_id": "S10150000211018049",
-    "course_name": "Superior test ",
-    "main_apk_version": "2.1.95",
-    "update_apk_version": "2.1.71",
-    "main_os_version": "2.14.3_E",
-    "update_os_version": "2.12.0"
-}
-}
-
-payloads_syncwise_dev = {'superior': {
-    "url": "https://dev.syncwise360.com/#login",
-    "device_id": "S10150000211018049",
-    "device_name": "49",
-    "main_apk_version": "2.1.95",
-    "update_apk_version": "2.1.71",
-    "main_os_version": "2.14.3_E",
-    "update_os_version": "2.12.0"
-}
-}
 
 
 class TestFirst:
