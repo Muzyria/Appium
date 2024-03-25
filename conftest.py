@@ -39,7 +39,7 @@ def appium_driver():
     capabilities = dict(
         platformName='android',
         automationName='uiautomator2',
-        deviceName=''
+        deviceName='192.168.2.33'
     )
 
     app_driver = appium_webdriver.Remote('http://127.0.0.1:4723/wd/hub', capabilities)

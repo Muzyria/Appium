@@ -1,7 +1,7 @@
 from appium.webdriver.common.appiumby import By
 
 
-class MainScreen:
+class MainScreenLocators:
     """Screen Play Golf"""
     BUTTON_MENU = (By.ID, 'com.l1inc.yamatrack3d:id/buttonMenu')
     BUTTON_HOLE = (By.ID, 'com.l1inc.yamatrack3d:id/buttonHole')

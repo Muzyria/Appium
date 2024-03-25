@@ -5,12 +5,12 @@ from appium.webdriver.common.appiumby import By
 
 
 os.system(f'adb disconnect')
-os.system(f'adb connect 192.168.3.220')
+os.system(f'adb connect 192.168.2.33')
 
 capabilities = dict(
     platformName='android',
     automationName='uiautomator2',
-    deviceName='192.168.3.220'
+    deviceName='192.168.2.33'
 )
 
 driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_capabilities=capabilities)
