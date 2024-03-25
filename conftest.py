@@ -4,7 +4,6 @@ import pytest
 from selenium import webdriver as selenium_webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from appium import webdriver as appium_webdriver
-from appium.webdriver.common.appiumby import AppiumBy
 
 
 # Фикстура для Selenium
