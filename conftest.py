@@ -23,6 +23,7 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="function")
 def driver(request):
     """selenium fixture"""
+    print()
     print("__USE_SELENIUM_FIXTURE__")
     print("\nstart driver for test..")
     options = Options()
