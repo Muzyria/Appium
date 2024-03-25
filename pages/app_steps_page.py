@@ -1,5 +1,5 @@
 
-from locators.app_elements_page_locators import MainScreen
+from locators.android_locators import MainScreen
 from pages.base_page import AppiumBasePage
 
 

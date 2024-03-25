@@ -3,7 +3,7 @@ import time
 from pages.app_steps_page import AutomaticAPKOSUpdate
 from sel_test import TestControlSyncWise
 from pages.adb_commands import BaseAdbCommands
-from locators.app_elements_page_locators import MainScreen
+from locators.android_locators import MainScreen
 
 payloads_control_live = {'superior': {
     "url": "https://control.syncwise360.com/#login",
