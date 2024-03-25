@@ -2,9 +2,6 @@
 from pages.base_page import BasePage
 
 
-from selenium.webdriver import Keys
-
-
 class SyncWiseSteps(BasePage):
     locators = SyncWise()
 

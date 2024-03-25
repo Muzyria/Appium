@@ -8,6 +8,9 @@ from selenium.webdriver.chrome.options import Options
 from appium import webdriver as appium_webdriver
 
 
+device_name = "192.168.0.103"
+
+
 def pytest_addoption(parser):
     """Опции командной строки.
     В командную строку передается параметр вида '--language="es"'
@@ -18,17 +21,17 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture(scope="function")
-def browser(request):
+def driver(request):
     """selenium fixture"""
     print("__USE_SELENIUM_FIXTURE__")
-    print("\nstart browser for test..")
+    print("\nstart driver for test..")
     options = Options()
     user_language = request.config.getoption("language")
     options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
-    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-    yield browser
-    print("\nquit browser..")
-    browser.quit()
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    yield driver
+    print("\nquit driver..")
+    driver.quit()
 
 
 # Фикстура для Appium
@@ -36,12 +39,14 @@ def browser(request):
 def appium_driver():
     """appium fixture"""
     print('__USE_APPIUM_FIXTURE__')
+    print("\nstart appium_driver for test..")
     capabilities = dict(
         platformName='android',
         automationName='uiautomator2',
-        deviceName='192.168.2.33'
+        deviceName=device_name
     )
+    appium_driver = appium_webdriver.Remote('http://127.0.0.1:4723/wd/hub', capabilities)
+    yield appium_driver
+    print("\nquit appium_driver..")
+    appium_driver.quit()
 
-    app_driver = appium_webdriver.Remote('http://127.0.0.1:4723/wd/hub', capabilities)
-    yield app_driver
-    app_driver.quit()
