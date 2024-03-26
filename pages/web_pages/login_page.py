@@ -9,3 +9,4 @@ class LoginPage(BasePage):
         self.element_is_visible(LoginPageLocators.INPUT_USERNAME).send_keys("QA")
         self.element_is_visible(LoginPageLocators.INPUT_PASSWORD).send_keys("Qwerty01!")
         self.element_is_visible(LoginPageLocators.BUTTON_LOGIN).click()
+

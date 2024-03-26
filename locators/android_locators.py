@@ -19,3 +19,12 @@ class MainScreenLocators:
 
     BUTTON_AUTO_UPDATE_APK = (By.ID, 'com.l1inc.yamatrack3d:id/autoUpdateCellApk')
     BUTTON_AUTO_UPDATE_OS = (By.ID, 'com.l1inc.yamatrack3d:id/autoUpdateCellOs')
+
+
+class MenuScreenLocators:
+    BUTTON_PLAY_GOLF = (By.ID, 'com.l1inc.yamatrack3d:id/linearLayoutPlayGolf')
+    BUTTON_SEND_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/linearLayoutSendMessage')
+
+
+class SendMessageLocators:
+    FIRST_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewName[0]')
