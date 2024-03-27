@@ -17,12 +17,12 @@ class SendMessageScreen(AppiumBasePage):
 
     def confirm_of_message_sending(self):
         """Press button YES"""
-        button_yes = self.elements_are_visible(SendMessageLocators.SEND_MESSAGE_BUTTON_YES)
+        button_yes = self.element_is_visible(SendMessageLocators.SEND_MESSAGE_BUTTON_YES)
         button_yes.click()
 
     def cancel_send_message(self):
         """Press button NO"""
-        button_no = self.elements_are_visible(SendMessageLocators.SEND_MESSAGE_BUTTON_NO)
+        button_no = self.element_is_visible(SendMessageLocators.SEND_MESSAGE_BUTTON_NO)
         button_no.click()
 
     def leave_send_message_screen(self):

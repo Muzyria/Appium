@@ -26,8 +26,8 @@ def test_first(driver):
 
 
 @pytest.mark.device
-@pytest.mark.parametrize()
-def test_second(appium_driver):
+@pytest.mark.parametrize('number_of_message', list(range(1, 9)))
+def test_second(appium_driver, number_of_message):
     screen = MainScreen(appium_driver)
     screen.press_button_menu()
 
@@ -35,9 +35,7 @@ def test_second(appium_driver):
     menu_screen.press_button_send_message()
 
     send_message_screen = SendMessageScreen(appium_driver)
-    send_message_screen.send_message(8)
-
-
-
-
-
+    send_message_screen.send_message(number_of_message)
+    send_message_screen.confirm_of_message_sending()
+    # send_message_screen.leave_send_message_screen()
+    menu_screen.press_button_play_golf()

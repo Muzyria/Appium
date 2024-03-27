@@ -18,10 +18,7 @@ driver.implicitly_wait(10)
 
 # element_name = 'com.l1inc.yamatrack3d:id/textViewName'
 
-driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/'
-                                    'android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/'
-                                    'android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[7]/'
-                                    'android.widget.LinearLayout/android.widget.TextView').click()
+driver.find_element(By.ID, 'com.l1inc.yamatrack3d:id/buttonYes').click()
 
 
 

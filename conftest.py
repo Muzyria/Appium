@@ -36,9 +36,10 @@ def driver(request):
 
 
 # Фикстура для Appium
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="session")
 def appium_driver():
     """appium fixture"""
+    print()
     print('__USE_APPIUM_FIXTURE__')
     print("\nstart appium_driver for test..")
     capabilities = dict(
