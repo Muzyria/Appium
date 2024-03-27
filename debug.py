@@ -4,32 +4,36 @@ from appium import webdriver
 from appium.webdriver.common.appiumby import By
 
 
-os.system(f'adb disconnect')
-os.system(f'adb connect 192.168.2.33')
+# os.system(f'adb disconnect')
+# os.system(f'adb connect 192.168.0.103')
 
 capabilities = dict(
     platformName='android',
     automationName='uiautomator2',
-    deviceName='192.168.2.33'
+    deviceName='192.168.0.103'
 )
 
 driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_capabilities=capabilities)
 driver.implicitly_wait(10)
 
-element_name = '//android.widget.LinearLayout[@content-desc="Startup_Depot,Connected,Wifi signal full."]/android.widget.RelativeLayout'
+# element_name = 'com.l1inc.yamatrack3d:id/textViewName'
 
-try:
-    # Поиск элемента по имени
-    element = driver.find_element(By.XPATH, element_name)
+driver.find_element(By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView').click()
 
-    # Действия с найденным элементом
-    element.click()  # Пример действия - кликнуть по элементу
-
-except Exception as e:
-    print(f"Ошибка: {e}")
-finally:
-    # Завершение работы драйвера
-    driver.quit()
+# try:
+#     # Поиск элемента по имени
+#     elements = driver.find_elements(By.ID, element_name)
+#
+#     # Действия с найденным элементом
+#     for i in elements:
+#         print(i.text)
+#
+#
+# except Exception as e:
+#     print(f"Ошибка: {e}")
+# finally:
+#     # Завершение работы драйвера
+#     driver.quit()
 
 
 

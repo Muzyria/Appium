@@ -28,3 +28,6 @@ class MenuScreenLocators:
 
 class SendMessageLocators:
     FIRST_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewName')
+
+    TEST = (By.XPATH, '//*[text()="Found a golf club"]')
+
