@@ -9,6 +9,8 @@ from pages.device_pages.main_screen import MainScreen
 from pages.device_pages.menu_screen import MenuScreen
 from pages.device_pages.send_massage_screen import SendMessageScreen
 
+from locators.android_locators import SendMessageLocators
+
 
 @pytest.mark.web
 def test_first(driver):
@@ -33,6 +35,7 @@ def test_second(appium_driver):
 
     send_message_screen = SendMessageScreen(appium_driver)
     send_message_screen.send_message()
+
 
 
 

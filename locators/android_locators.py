@@ -27,4 +27,4 @@ class MenuScreenLocators:
 
 
 class SendMessageLocators:
-    FIRST_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewName[0]')
+    FIRST_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewName')
