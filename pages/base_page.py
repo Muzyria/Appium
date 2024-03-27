@@ -91,6 +91,15 @@ class AppiumBasePage:
     def element_is_visible(self, locator, timeout=30):
         return wait(self.appium_driver, timeout).until(EC.visibility_of_element_located(locator))
 
+    def elements_are_visible(self, locator, timeout=30):
+        return wait(self.appium_driver, timeout).until(EC.visibility_of_all_elements_located(locator))
+
+    def element_is_present(self, locator, timeout=30):
+        return wait(self.appium_driver, timeout).until(EC.presence_of_element_located(locator))
+
+    def elements_are_present(self, locator, timeout=30):
+        return wait(self.appium_driver, timeout).until(EC.presence_of_all_elements_located(locator))
+
     def touch_action(self, coordinate):
         action = TouchAction(self.appium_driver)
         action.tap(x=coordinate[0], y=coordinate[1]).perform()

@@ -3,6 +3,12 @@ from locators.android_locators import SendMessageLocators
 
 
 class SendMessageScreen(AppiumBasePage):
+    # def send_message(self):
+    #     button_menu = self.element_is_visible(SendMessageLocators.FIRST_MESSAGE)
+    #     button_menu.click()
+
+
     def send_message(self):
-        button_menu = self.element_is_visible(SendMessageLocators.FIRST_MESSAGE)
-        button_menu.click()
+        button_menu = self.elements_are_visible(SendMessageLocators.FIRST_MESSAGE)
+        for i in button_menu:
+            print(i)
