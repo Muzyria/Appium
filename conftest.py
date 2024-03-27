@@ -20,7 +20,7 @@ def pytest_addoption(parser):
                      help="Choose language: ---")
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="session")
 def driver(request):
     """selenium fixture"""
     print()
