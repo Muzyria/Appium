@@ -34,7 +34,7 @@ def test_second(appium_driver):
     menu_screen.press_button_send_message()
 
     send_message_screen = SendMessageScreen(appium_driver)
-    send_message_screen.send_message()
+    send_message_screen.send_message(3)
 
 
 

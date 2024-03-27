@@ -27,7 +27,18 @@ class MenuScreenLocators:
 
 
 class SendMessageLocators:
-    FIRST_MESSAGE = (By.ID, 'com.l1inc.yamatrack3d:id/textViewName')
+    @staticmethod
+    def SELECT_MESSAGE_BY_NUMBER(n):
+        return (By.XPATH, f"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[{n}]/android.widget.LinearLayout/android.widget.TextView")
 
-    TEST = (By.XPATH, '//*[text()="Found a golf club"]')
+    SEND_MESSAGE_BUTTON_YES = (By.ID, 'com.l1inc.yamatrack3d:id/buttonYes')
+    SEND_MESSAGE_BUTTON_NO = (By.ID, 'com.l1inc.yamatrack3d:id/buttonNo')
+    SEND_MESSAGE_BUTTON_CANCEL = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
 
+
+class SelectLanguageLocators:
+    BUTTON_CANCEL = (By.ID, 'com.l1inc.yamatrack3d:id/imageButtonCancel')
+
+    @staticmethod
+    def SELECT_LANGUAGE_BY_NUMBER(n):
+        return (By.XPATH, f"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[{n}]/android.widget.LinearLayout/android.widget.TextView")

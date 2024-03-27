@@ -4,17 +4,18 @@ from locators.android_locators import SendMessageLocators
 
 class SendMessageScreen(AppiumBasePage):
 
-    def send_message(self):
-        list_messages = self.elements_are_visible(SendMessageLocators.FIRST_MESSAGE)
-        print(f'elements are visible {len(list_messages)}')
-        print()
-        for i in list_messages:
-            print(i.text)
-            # print(i.__dict__)  # Получение значения атрибута 'elementId'
-
-
-        from appium.webdriver.common.appiumby import By
-        message = self.element_is_visible(SendMessageLocators.TEST)
-        print(f'---{message.text}')
+    def send_message(self, number_of_message: int):
+        message = self.element_is_visible(SendMessageLocators.SELECT_MESSAGE_BY_NUMBER(number_of_message))
+        message_text = message.text
         message.click()
+
+    def confirm_of_message_sending(self):
+        button_yes = self.elements_are_visible(SendMessageLocators.SEND_MESSAGE_BUTTON_YES)
+        button_yes.click()
+
+    def cancel_send_message(self):
+        button_no = self.elements_are_visible(SendMessageLocators.SEND_MESSAGE_BUTTON_NO)
+        button_no.click()
+
+
 
