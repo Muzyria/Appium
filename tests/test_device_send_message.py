@@ -22,10 +22,10 @@ class TestSendMessages:
     @pytest.fixture(scope="function", params=list(range(1, 9)))
     def setup_language(self, appium_driver, request):
         number_of_language = request.param
-        self.no_test_device_select_language(appium_driver, number_of_language)
+        self.device_select_language(appium_driver, number_of_language)
         yield
 
-    def no_test_device_select_language(self, appium_driver, number_of_language):
+    def device_select_language(self, appium_driver, number_of_language):
         self.screen = MainScreen(appium_driver)                         # инициализируем Main screen
         self.screen.press_button_select_language()                      # press button select language
 
