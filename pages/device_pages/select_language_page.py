@@ -2,7 +2,7 @@ from pages.base_page import AppiumBasePage
 from locators.android_locators import SelectLanguageLocators
 
 
-class SendMessageScreen(AppiumBasePage):
+class SelectLanguageScreen(AppiumBasePage):
     def select_language(self, number_of_language: int):
         if number_of_language == 8:
             self.swipe_screen_down()

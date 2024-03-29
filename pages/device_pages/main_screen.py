@@ -8,4 +8,6 @@ class MainScreen(AppiumBasePage):
         button_menu = self.element_is_visible(MainScreenLocators.BUTTON_MENU)
         button_menu.click()
 
-
+    def press_button_select_language(self):
+        button_language = self.element_is_visible(MainScreenLocators.BUTTON_LANGUAGE)
+        button_language.click()
