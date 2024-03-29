@@ -31,7 +31,7 @@ class TestSendMessages:
 
         self.language_screen = SelectLanguageScreen(appium_driver)      # инициализируем Select Language screen
         self.language_screen.select_language(number_of_language)        # press button language
-        time.sleep(1)
+        # time.sleep(1)
 
     @pytest.mark.device
     @pytest.mark.parametrize('number_of_message', list(range(1, 9)))
@@ -51,7 +51,7 @@ class TestSendMessages:
         # Запускаем
         self.course_map_page = CourseMapPage(driver, driver.current_url)  # инициализируем Course Map page
         self.course_map_page.check_incoming_message()                     # wait and press confirm message
-        time.sleep(3)
+        # time.sleep(3)
 
 
 # class TestSendMessages:
