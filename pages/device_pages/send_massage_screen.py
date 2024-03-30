@@ -14,6 +14,7 @@ class SendMessageScreen(AppiumBasePage):
         message_text = message.text
         print(message_text)
         message.click()
+        return message_text
 
     def confirm_of_message_sending(self):
         """Press button YES"""

@@ -83,6 +83,14 @@ class BasePage:
         action.context_click(element)
         action.perform()
 
+    def take_element_screenshot(self, locator, file_name):
+        try:
+            element = self.element_is_visible(locator)
+            element.screenshot(file_name)
+            print(f"Скриншот элемента сохранен: {file_name}")
+        except Exception as e:
+            print(f"Ошибка при создании скриншота элемента: {e}")
+
 
 class AppiumBasePage:
     def __init__(self, appium_driver):

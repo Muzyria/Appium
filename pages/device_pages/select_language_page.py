@@ -12,3 +12,4 @@ class SelectLanguageScreen(AppiumBasePage):
         language_text = language.text
         print(language_text)
         language.click()
+        return language_text
