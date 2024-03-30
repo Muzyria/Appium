@@ -12,7 +12,7 @@ class SendMessageScreen(AppiumBasePage):
         else:
             message = self.element_is_visible(SendMessageLocators.SELECT_MESSAGE_BY_NUMBER(number_of_message))
         message_text = message.text
-        print(message_text)
+        print(f"message on device - {message_text}")
         message.click()
         return message_text
 
