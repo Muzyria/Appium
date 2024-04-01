@@ -31,7 +31,7 @@ class BasePage:
 
     def open(self):
         self.driver.get(self.url)
-        self.driver.maximize_window()
+        # self.driver.maximize_window()
 
     def element_is_visible(self, locator, timeout=30):
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
@@ -53,6 +53,18 @@ class BasePage:
 
     def go_to_element(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    def switch_to_new_tab(self):
+        """Opens a new tab and switches to new tab"""
+        self.driver.switch_to.new_window('tab')
+
+    def get_window_handle(self):
+        """Get window handle"""
+        return self.driver.current_window_handle
+
+    def switching_tab(self, handle):
+        """Switching tabs"""
+        self.driver.switch_to.window(handle)
 
     def move_coursor_to_elrment(self, element):
         div_rect = element.rect

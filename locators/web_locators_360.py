@@ -8,7 +8,12 @@ class LoginPageLocators:
 
 
 class CourseMapPageLocators:
+    BUTTON_ASSETS = (By.CSS_SELECTOR, 'button[aria-label="assets"]')
 
     MODAL_WINDOW_MESSAGE = (By.CSS_SELECTOR, "div > div.contentModal")
     TEXT_MESSAGE = (By.CSS_SELECTOR, "div.contentModal > div:nth-child(1) > div > h5")
     BUTTON_CONFIRMED_MESSAGE = (By.CSS_SELECTOR, "div.contentModal > div.btnwrap > button")
+
+
+class AssetsPageLocators:
+    pass

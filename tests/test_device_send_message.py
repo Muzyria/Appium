@@ -1,8 +1,8 @@
 import time
 import pytest
 
-from pages.web_pages.login_page import LoginPage
-from pages.web_pages.course_map_page import CourseMapPage
+from pages.web_pages_360.login_page_360 import LoginPage360
+from pages.web_pages_360.course_map_page import CourseMapPage
 
 from pages.device_pages.main_screen import MainScreen
 from pages.device_pages.menu_screen import MenuScreen
@@ -14,7 +14,7 @@ class TestSendMessages:
     @pytest.fixture(scope="session", autouse=True)
     def login_to_site(self, driver):
         link = "https://beta.syncwise360.com/login"
-        self.login_page = LoginPage(driver, link)  # инициализируем
+        self.login_page = LoginPage360(driver, link)  # инициализируем
         self.login_page.open()  # открываем страницу
         self.login_page.enter_user_to_site()  # входим на сайт
         time.sleep(10)

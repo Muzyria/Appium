@@ -11,3 +11,7 @@ class MenuScreen(AppiumBasePage):
         button_send_message = self.element_is_visible(MenuScreenLocators.BUTTON_SEND_MESSAGE)
         button_send_message.click()
 
+    def press_button_settings(self):
+        button_settings = self.element_is_visible(MenuScreenLocators.BUTTON_SETTINGS)
+        button_settings.click()
+

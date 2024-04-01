@@ -2,7 +2,7 @@ import time
 import pytest
 
 from pages.base_page import BasePage
-from locators.web_locators import CourseMapPageLocators
+from locators.web_locators_360 import CourseMapPageLocators
 
 
 class CourseMapPage(BasePage):
@@ -21,3 +21,7 @@ class CourseMapPage(BasePage):
             return False
         self.element_is_visible(CourseMapPageLocators.BUTTON_CONFIRMED_MESSAGE).click()
         return True
+
+    def go_to_assets_page(self):
+        button_assets = self.element_is_visible(CourseMapPageLocators.BUTTON_ASSETS)
+        button_assets.click()
