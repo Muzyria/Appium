@@ -33,6 +33,9 @@ class BasePage:
         self.driver.get(self.url)
         # self.driver.maximize_window()
 
+    def open_new_url(self, url):
+        self.driver.get(url)
+
     def element_is_visible(self, locator, timeout=30):
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 

@@ -25,3 +25,13 @@ class CourseMapPage(BasePage):
     def go_to_assets_page(self):
         button_assets = self.element_is_visible(CourseMapPageLocators.BUTTON_ASSETS)
         button_assets.click()
+
+    def press_cart_asset_details(self):
+        button = self.element_is_visible(CourseMapPageLocators.CART_ASSET_DETAILS)
+        button.click()
+
+    def check_gps_version(self, version_device):
+        list_values = self.elements_are_visible(CourseMapPageLocators.LIST_VALUES_ASSET_DETAILS)
+        values_gps = [item for item in list_values][2].text
+
+        assert version_device == values_gps, f"Device GPS version {version_device} not math GPS version web {values_gps}"
