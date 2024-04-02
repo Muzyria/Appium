@@ -14,3 +14,7 @@ class SettingsScreen(AppiumBasePage):
     def press_asset_details_button(self):
         button = self.element_is_visible(SettingsLocators.SELECT_SETTINGS_BY_NUMBER("1"))
         button.click()
+
+    def press_button_cancel(self):
+        cancel_button = self.element_is_visible(SettingsLocators.CANCEL_BUTTON)
+        cancel_button.click()

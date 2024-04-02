@@ -88,11 +88,15 @@ class TestSmokeGPSModule:
         self.CART_NAME = self.asset_details_screen.get_cart_name()
         self.DEVICE_ID = self.asset_details_screen.get_device_id()
         self.GPS_MODULE_VERSION = self.asset_details_screen.look_at_gps_firmware()  # look at GPS version
-        # print(self.CART_NAME)
-        # print(self.DEVICE_ID)
-        # print(self.GPS_MODULE_VERSION)
+        print(self.CART_NAME)
+        print(self.DEVICE_ID)
+        print(self.GPS_MODULE_VERSION)
 
-        # Запускаем
+        self.asset_details_screen.press_button_cancel()  # return to play golf
+        self.settings_screen.press_button_cancel()
+        self.menu_screen.press_button_play_golf()
+
+        # Запускаем WEB
         self.course_map_page = CourseMapPage(driver, driver.current_url)  # инициализируем Course Map page 360
         self.course_map_page.go_to_assets_page()   # press assets button
 
@@ -109,8 +113,14 @@ class TestSmokeGPSModule:
         self.control_company_page.select_device_by_device_id(self.DEVICE_ID)  # find and click device in list
 
         self.control_device_detail_page = DeviceDetailPage(driver, driver.current_url)  # init
-        self.control_device_detail_page.check_gps_fw_info(self.GPS_MODULE_VERSION[1])
-        time.sleep(10)
+        self.control_device_detail_page.check_gps_fw_info(self.GPS_MODULE_VERSION[1])  # check gps version in control
+        time.sleep(5)
+
+
+
+
+
+
 
         # self.control_device_detail_page.click_button_edit_ota_version()  # click OTA edit
         # self.control_device_detail_page.open_list_gps_version()

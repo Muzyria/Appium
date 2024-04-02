@@ -45,6 +45,8 @@ class SettingsLocators:
     BUTTON_SUBMIT = (By.ID, "com.l1inc.yamatrack3d:id/buttonSubmit")
     FIELD_ENTER_PASSWORD = (By.ID, "com.l1inc.yamatrack3d:id/textViewPasscode")
     ASSET_DETAILS = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView")
+    CANCEL_BUTTON = (By.ID, "com.l1inc.yamatrack3d:id/imageButtonCancel")
+
     @staticmethod
     def SELECT_SETTINGS_BY_NUMBER(number):
         return (By.XPATH, f"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[{number}]/android.widget.LinearLayout/android.widget.TextView")
@@ -53,6 +55,7 @@ class SettingsLocators:
 class AssetDetailsLocators:
     CART_NAME = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[2]")
     DEVICE_ID = (By.ID, "com.l1inc.yamatrack3d:id/textViewTrackerId")
+    CANCEL_BUTTON = (By.ID, "com.l1inc.yamatrack3d:id/imageButtonCancel")
     @staticmethod
     def SELECT_ASSET_DETAILS_KEY_BY_NUMBER(number):
         return (By.XPATH,

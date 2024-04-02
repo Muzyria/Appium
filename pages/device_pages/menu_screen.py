@@ -14,4 +14,3 @@ class MenuScreen(AppiumBasePage):
     def press_button_settings(self):
         button_settings = self.element_is_visible(MenuScreenLocators.BUTTON_SETTINGS)
         button_settings.click()
-

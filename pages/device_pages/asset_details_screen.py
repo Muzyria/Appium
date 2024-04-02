@@ -20,3 +20,6 @@ class AssetDetailsScreen(AppiumBasePage):
         cart_name = self.element_is_visible(AssetDetailsLocators.CART_NAME)
         return cart_name.text
 
+    def press_button_cancel(self):
+        cancel_button = self.element_is_visible(AssetDetailsLocators.CANCEL_BUTTON)
+        cancel_button.click()
