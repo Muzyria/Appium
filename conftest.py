@@ -20,7 +20,7 @@ def pytest_addoption(parser):
                      help="Choose language: ---")
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def driver(request):
     """selenium fixture"""
     print()
@@ -36,7 +36,7 @@ def driver(request):
 
 
 # Фикстура для Appium
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def appium_driver():
     """appium fixture"""
     print()

@@ -84,18 +84,9 @@ class TestSmokeGPSModule:
 
         self.control_device_detail_page = DeviceDetailPage(driver, driver.current_url)  # init
         self.control_device_detail_page.check_gps_fw_info(self.GPS_MODULE_VERSION[1])  # check gps version in control
-        time.sleep(5)
+        time.sleep(30)
 
-
-    @pytest.mark.device
-    def test_check_gps_module_version(self, appium_driver, driver):
-        """
-        1) Connect GPS module LC79H (GPS FW 1 - please note current FW version) to the device and confirm:
-        - module detected
-        - confirm GPS FW version in Asset Details Yamatrack
-        - confirm GPS TYPE, GPS FW, GPS MODULE in Control Panel
-        - confirm GPS FW version and GPS type in 360
-        """
+    def get_device_info(self, appium_driver):
         self.screen = MainScreen(appium_driver)  # инициализируем Main screen
         self.screen.press_button_menu()  # Press button menu
 
@@ -118,13 +109,56 @@ class TestSmokeGPSModule:
         self.settings_screen.press_button_cancel()
         self.menu_screen.press_button_play_golf()
 
-        # Запускаем WEB
+    @pytest.mark.device
+    def test_check_gps_module_version(self, appium_driver, driver):
+        """
+        1) Connect GPS module LC79H (GPS FW 1 - please note current FW version) to the device and confirm:
+        - module detected
+        - confirm GPS FW version in Asset Details Yamatrack
+        - confirm GPS TYPE, GPS FW, GPS MODULE in Control Panel
+        - confirm GPS FW version and GPS type in 360
+        """
+        # self.screen = MainScreen(appium_driver)  # инициализируем Main screen
+        # self.screen.press_button_menu()  # Press button menu
+        #
+        # self.menu_screen = MenuScreen(appium_driver)  # инициализируем Menu screen
+        # self.menu_screen.press_button_settings()  # Press button settings
+        #
+        # self.settings_screen = SettingsScreen(appium_driver)  # init
+        # self.settings_screen.enter_password()  # enter password
+        # self.settings_screen.press_asset_details_button()  # press asset details
+        #
+        # self.asset_details_screen = AssetDetailsScreen(appium_driver)  # init
+        # self.CART_NAME = self.asset_details_screen.get_cart_name()
+        # self.DEVICE_ID = self.asset_details_screen.get_device_id()
+        # self.GPS_MODULE_VERSION = self.asset_details_screen.look_at_gps_firmware()  # look at GPS version
+        # print(self.CART_NAME)
+        # print(self.DEVICE_ID)
+        # print(self.GPS_MODULE_VERSION)
+        #
+        # self.asset_details_screen.press_button_cancel()  # return to play golf
+        # self.settings_screen.press_button_cancel()
+        # self.menu_screen.press_button_play_golf()
+
+        #RUN DEVICE
+        self.get_device_info(appium_driver)
+
+        # RUN WEB
         self.run_web_checks(driver)
 
+    @pytest.mark.device
+    def test_check_gps_module_version_after_update(self, appium_driver, driver):
+        """
+        2) Change in Control Panel GPS FW version GPS module LC79H from FW 1 to from FW 2 note FW version)
+        - Confirm if GPS module LC79H updated successfuly
+        - module detected
+        - confirm GPS FW version in Asset Details Yamatrack
+        - confirm GPS TYPE, GPS FW, GPS MODULE in Control Panel
+        - confirm GPS FW version and GPS type in 360
+        """
+        self.get_device_info(appium_driver)
 
-
-
-
+        self.run_web_checks(driver)
 
 
 
