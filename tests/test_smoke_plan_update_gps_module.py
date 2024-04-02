@@ -38,7 +38,7 @@ class TestSmokeGPSModule:
     FIRST_TAB = None
     SECOND_TAB = None
 
-    @pytest.fixture(scope="session", autouse=True)
+    @pytest.fixture(scope="function", autouse=True)
     def login_to_site_360(self, driver):
         link = "https://beta.syncwise360.com/login"
         self.login_page = LoginPage360(driver, link)  # инициализируем
@@ -49,7 +49,7 @@ class TestSmokeGPSModule:
         print(TestSmokeGPSModule.FIRST_TAB)
         time.sleep(1)
 
-    @pytest.fixture(scope="session", autouse=True)
+    @pytest.fixture(scope="function", autouse=True)
     def login_to_site_control(self, driver):
         self.login_page.switch_to_new_tab()
         TestSmokeGPSModule.SECOND_TAB = self.login_page.get_window_handle()
@@ -64,6 +64,28 @@ class TestSmokeGPSModule:
 
         self.login_page.switching_tab(TestSmokeGPSModule.FIRST_TAB)
         time.sleep(1)
+
+    def run_web_checks(self, driver):
+        # Запускаем WEB
+        self.course_map_page = CourseMapPage(driver, driver.current_url)  # инициализируем Course Map page 360
+        self.course_map_page.go_to_assets_page()  # press assets button
+
+        self.assets_page = AssetsPage(driver, driver.current_url)  # init
+        self.assets_page.select_cart_in_list_by_name(self.CART_NAME)
+
+        self.course_map_page = CourseMapPage(driver, driver.current_url)  # инициализируем Course Map page 360
+        self.course_map_page.press_cart_asset_details()  # press assets details
+        self.course_map_page.check_gps_version(self.GPS_MODULE_VERSION[1])  # check GPS version on 360 fnd device
+
+        self.course_map_page.switching_tab(TestSmokeGPSModule.SECOND_TAB)  # switch to second tab
+
+        self.control_company_page = CompanyPage(driver, driver.current_url)  # init
+        self.control_company_page.select_device_by_device_id(self.DEVICE_ID)  # find and click device in list
+
+        self.control_device_detail_page = DeviceDetailPage(driver, driver.current_url)  # init
+        self.control_device_detail_page.check_gps_fw_info(self.GPS_MODULE_VERSION[1])  # check gps version in control
+        time.sleep(5)
+
 
     @pytest.mark.device
     def test_check_gps_module_version(self, appium_driver, driver):
@@ -97,24 +119,8 @@ class TestSmokeGPSModule:
         self.menu_screen.press_button_play_golf()
 
         # Запускаем WEB
-        self.course_map_page = CourseMapPage(driver, driver.current_url)  # инициализируем Course Map page 360
-        self.course_map_page.go_to_assets_page()   # press assets button
+        self.run_web_checks(driver)
 
-        self.assets_page = AssetsPage(driver, driver.current_url)  # init
-        self.assets_page.select_cart_in_list_by_name(self.CART_NAME)
-
-        self.course_map_page = CourseMapPage(driver, driver.current_url)  # инициализируем Course Map page 360
-        self.course_map_page.press_cart_asset_details()  # press assets details
-        self.course_map_page.check_gps_version(self.GPS_MODULE_VERSION[1])  # check GPS version on 360 fnd device
-
-        self.course_map_page.switching_tab(TestSmokeGPSModule.SECOND_TAB)  # switch to second tab
-
-        self.control_company_page = CompanyPage(driver, driver.current_url)  # init
-        self.control_company_page.select_device_by_device_id(self.DEVICE_ID)  # find and click device in list
-
-        self.control_device_detail_page = DeviceDetailPage(driver, driver.current_url)  # init
-        self.control_device_detail_page.check_gps_fw_info(self.GPS_MODULE_VERSION[1])  # check gps version in control
-        time.sleep(5)
 
 
 
