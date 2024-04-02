@@ -45,6 +45,7 @@ class SettingsLocators:
     BUTTON_SUBMIT = (By.ID, "com.l1inc.yamatrack3d:id/buttonSubmit")
     FIELD_ENTER_PASSWORD = (By.ID, "com.l1inc.yamatrack3d:id/textViewPasscode")
     ASSET_DETAILS = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView")
+    YES_BUTTON = (By.ID, "com.l1inc.yamatrack3d:id/buttonYes")
     CANCEL_BUTTON = (By.ID, "com.l1inc.yamatrack3d:id/imageButtonCancel")
 
     @staticmethod

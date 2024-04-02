@@ -15,6 +15,16 @@ class SettingsScreen(AppiumBasePage):
         button = self.element_is_visible(SettingsLocators.SELECT_SETTINGS_BY_NUMBER("1"))
         button.click()
 
+    def press_full_app_reset_button(self):
+        button = self.element_is_visible(SettingsLocators.SELECT_SETTINGS_BY_NUMBER("9"))
+        button.click()
+
+    def press_yes_button(self):
+        button = self.element_is_visible(SettingsLocators.YES_BUTTON)
+        button.click()
+
     def press_button_cancel(self):
         cancel_button = self.element_is_visible(SettingsLocators.CANCEL_BUTTON)
         cancel_button.click()
+
+

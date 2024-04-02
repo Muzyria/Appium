@@ -35,3 +35,4 @@ class CourseMapPage(BasePage):
         values_gps = [item for item in list_values][2].text
 
         assert version_device == values_gps, f"Device GPS version {version_device} not math GPS version web {values_gps}"
+        print(f"Gps version on web 360 is {values_gps}")

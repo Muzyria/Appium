@@ -36,6 +36,9 @@ class BasePage:
     def open_new_url(self, url):
         self.driver.get(url)
 
+    def refresh_tab(self):
+        self.driver.refresh()
+
     def element_is_visible(self, locator, timeout=30):
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
@@ -128,6 +131,11 @@ class AppiumBasePage:
 
     def element_is_clickable(self, locator, timeout=30):
         return wait(self.appium_driver, timeout).until(EC.element_to_be_clickable(locator))
+
+    def wait_for_element(self, locator, timeout=30):
+        """Ожидание появления элемента"""
+        return wait(self.appium_driver, timeout).until(EC.presence_of_element_located(locator))
+
 
     def touch_action(self, coordinate):
         action = TouchAction(self.appium_driver)

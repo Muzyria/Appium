@@ -61,8 +61,9 @@ class TestSmokeGPSModule:
         self.login_page.enter_user_to_site()  # входим на сайт
         time.sleep(2)
         self.login_page.open_new_url(link)
+        time.sleep(1)
 
-        self.login_page.switching_tab(TestSmokeGPSModule.FIRST_TAB)
+        self.login_page.switching_tab(TestSmokeGPSModule.FIRST_TAB)  # switch to FIRST_TAB
         time.sleep(1)
 
     def run_web_checks(self, driver):
@@ -75,16 +76,35 @@ class TestSmokeGPSModule:
 
         self.course_map_page = CourseMapPage(driver, driver.current_url)  # инициализируем Course Map page 360
         self.course_map_page.press_cart_asset_details()  # press assets details
-        self.course_map_page.check_gps_version(self.GPS_MODULE_VERSION[1])  # check GPS version on 360 fnd device
+        self.course_map_page.check_gps_version(self.GPS_MODULE_VERSION)  # check GPS version on 360 fnd device
 
-        self.course_map_page.switching_tab(TestSmokeGPSModule.SECOND_TAB)  # switch to second tab
+        self.course_map_page.switching_tab(TestSmokeGPSModule.SECOND_TAB)  # switch to SECOND_TAB
 
         self.control_company_page = CompanyPage(driver, driver.current_url)  # init
         self.control_company_page.select_device_by_device_id(self.DEVICE_ID)  # find and click device in list
 
         self.control_device_detail_page = DeviceDetailPage(driver, driver.current_url)  # init
-        self.control_device_detail_page.check_gps_fw_info(self.GPS_MODULE_VERSION[1])  # check gps version in control
-        time.sleep(30)
+        self.control_device_detail_page.check_gps_fw_info(self.GPS_MODULE_VERSION)  # check gps version in control
+
+        self.control_company_page.switching_tab(self.FIRST_TAB)   # switch to FIRST_TAB
+        time.sleep(5)
+
+    def run_web_select_gps_version_update(self, driver):
+        # Запускаем WEB
+        self.course_map_page = CourseMapPage(driver, driver.current_url)  # инициализируем Course Map page 360
+        self.course_map_page.switching_tab(self.SECOND_TAB)  # switch to SECOND_TAB
+
+        self.control_company_page = CompanyPage(driver, driver.current_url)  # init
+        self.control_company_page.select_device_by_device_id(self.DEVICE_ID)  # find and click device in list
+
+        self.control_device_detail_page = DeviceDetailPage(driver, driver.current_url)  # init
+        self.control_device_detail_page.click_button_edit_ota_version()  # click OTA edit
+        self.control_device_detail_page.open_list_gps_version()
+        self.control_device_detail_page.select_another_gps_version_ota(self.GPS_MODULE_VERSION)   # select another version
+        self.control_device_detail_page.click_button_save_ota()  # click button SAVE OTA
+        time.sleep(5)
+        self.control_device_detail_page.refresh_tab()
+        self.control_company_page.switching_tab(self.FIRST_TAB)  # switch to FIRST_TAB
 
     def get_device_info(self, appium_driver):
         self.screen = MainScreen(appium_driver)  # инициализируем Main screen
@@ -100,7 +120,7 @@ class TestSmokeGPSModule:
         self.asset_details_screen = AssetDetailsScreen(appium_driver)  # init
         self.CART_NAME = self.asset_details_screen.get_cart_name()
         self.DEVICE_ID = self.asset_details_screen.get_device_id()
-        self.GPS_MODULE_VERSION = self.asset_details_screen.look_at_gps_firmware()  # look at GPS version
+        self.GPS_MODULE_VERSION = self.asset_details_screen.look_at_gps_firmware()[1]  # look at GPS version
         print(self.CART_NAME)
         print(self.DEVICE_ID)
         print(self.GPS_MODULE_VERSION)
@@ -109,6 +129,20 @@ class TestSmokeGPSModule:
         self.settings_screen.press_button_cancel()
         self.menu_screen.press_button_play_golf()
 
+    def full_app_reset(self, appium_driver):
+        self.screen = MainScreen(appium_driver)  # инициализируем Main screen
+        self.screen.press_button_menu()  # Press button menu
+
+        self.menu_screen = MenuScreen(appium_driver)  # инициализируем Menu screen
+        self.menu_screen.press_button_settings()  # Press button settings
+
+        self.settings_screen = SettingsScreen(appium_driver)  # init
+        self.settings_screen.enter_password()  # enter password
+
+        self.settings_screen.press_full_app_reset_button()  # press full app reset button
+        self.settings_screen.press_yes_button()  # press YES button
+
+    @pytest.mark.skip
     @pytest.mark.device
     def test_check_gps_module_version(self, appium_driver, driver):
         """
@@ -118,28 +152,6 @@ class TestSmokeGPSModule:
         - confirm GPS TYPE, GPS FW, GPS MODULE in Control Panel
         - confirm GPS FW version and GPS type in 360
         """
-        # self.screen = MainScreen(appium_driver)  # инициализируем Main screen
-        # self.screen.press_button_menu()  # Press button menu
-        #
-        # self.menu_screen = MenuScreen(appium_driver)  # инициализируем Menu screen
-        # self.menu_screen.press_button_settings()  # Press button settings
-        #
-        # self.settings_screen = SettingsScreen(appium_driver)  # init
-        # self.settings_screen.enter_password()  # enter password
-        # self.settings_screen.press_asset_details_button()  # press asset details
-        #
-        # self.asset_details_screen = AssetDetailsScreen(appium_driver)  # init
-        # self.CART_NAME = self.asset_details_screen.get_cart_name()
-        # self.DEVICE_ID = self.asset_details_screen.get_device_id()
-        # self.GPS_MODULE_VERSION = self.asset_details_screen.look_at_gps_firmware()  # look at GPS version
-        # print(self.CART_NAME)
-        # print(self.DEVICE_ID)
-        # print(self.GPS_MODULE_VERSION)
-        #
-        # self.asset_details_screen.press_button_cancel()  # return to play golf
-        # self.settings_screen.press_button_cancel()
-        # self.menu_screen.press_button_play_golf()
-
         #RUN DEVICE
         self.get_device_info(appium_driver)
 
@@ -156,13 +168,17 @@ class TestSmokeGPSModule:
         - confirm GPS TYPE, GPS FW, GPS MODULE in Control Panel
         - confirm GPS FW version and GPS type in 360
         """
+
         self.get_device_info(appium_driver)
+        self.run_web_select_gps_version_update(driver)
+        time.sleep(5)
+        self.full_app_reset(appium_driver)
 
+        self.screen = MainScreen(appium_driver)  # инициализируем Main screen
+        self.screen.wait_button_menu(200)  # WAIT BUTTON MENU
+        print("--START_CHECKS__")
+
+        time.sleep(5)
+        self.get_device_info(appium_driver)
         self.run_web_checks(driver)
-
-
-
-        # self.control_device_detail_page.click_button_edit_ota_version()  # click OTA edit
-        # self.control_device_detail_page.open_list_gps_version()
-
-
+        time.sleep(20)
