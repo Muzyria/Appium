@@ -173,7 +173,7 @@ class TestSmokeGPSModule:
     @pytest.mark.device
     def test_check_gps_module_version_after_update(self, appium_driver, driver):
         """
-        2) Change in Control Panel GPS FW version GPS module LC79H from FW 1 to from FW 2 note FW version)
+        2) Change in Control Panel GPS FW version GPS module LC79H from FW 1 to from FW 2 note FW version
         - Confirm if GPS module LC79H updated successfuly
         - module detected
         - confirm GPS FW version in Asset Details Yamatrack
