@@ -12,7 +12,7 @@ class DeviceDetailPage(BasePage):
         gps_list.click()
 
     def select_another_gps_version_ota(self, device_gps_version: str):
-        cuurent_version_gps = device_gps_version.replace(" ", "")
+        current_version_gps = device_gps_version.replace(" ", "")
         another_gps_version = ""
         # Список пар значений
         pairs = [
@@ -22,20 +22,22 @@ class DeviceDetailPage(BasePage):
         ]
 
         for pair in pairs:
-            if cuurent_version_gps in pair:
-                index = pair.index(cuurent_version_gps)
+            if current_version_gps in pair:
+                index = pair.index(current_version_gps)
                 another_gps_version = pair[1 - index]
                 print(f"will select {another_gps_version}")
 
         row_gps_version = self.element_is_present(DeviceDetailPageLocators.SELECT_GPS_VERSION_OTA(another_gps_version))
         print(f'another GPS  - {another_gps_version}')
         row_gps_version.click()
+        return another_gps_version
 
     def click_button_save_ota(self):
         button_save = self.element_is_visible(DeviceDetailPageLocators.BUTTON_SAVE_OTA)
         button_save.click()
 
     def check_gps_fw_info(self, device_gps_fw):
+        """CHECK version GPS on device and reported version to web"""
         gps_fw = self.element_is_visible(DeviceDetailPageLocators.DEVICE_GPS_FW).text
         assert device_gps_fw == gps_fw, f"Device FW {device_gps_fw} is not math to web control info {gps_fw}"
         print(f"Gps version on web CONTROL is {gps_fw}")

@@ -8,7 +8,8 @@ from selenium.webdriver.chrome.options import Options
 from appium import webdriver as appium_webdriver
 
 
-device_name = "192.168.0.103"
+# device_name = "192.168.0.103"
+device_name = "dbe407da"
 
 
 def pytest_addoption(parser):
