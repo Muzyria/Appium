@@ -101,6 +101,11 @@ class BasePage:
         action.context_click(element)
         action.perform()
 
+    def take_page_screenshot(self, file_name):
+        self.driver.save_screenshot(file_name)
+        print(f"Скриншот сохранен: {file_name}")
+
+
     def take_element_screenshot(self, locator, file_name):
         try:
             element = self.element_is_visible(locator)

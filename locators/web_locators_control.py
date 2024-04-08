@@ -14,7 +14,7 @@ class CompanyPageLocators:
 
 
 class DeviceDetailPageLocators:
-    BUTTON_EDIT_OTA_VERSION = (By.XPATH, "//div[contains(text(), 'OTA')]/following-sibling::div[@class='bt edit']")
+    BUTTON_EDIT_OTA_VERSION = (By.XPATH, "(//div[@class='bt edit'])[1]")
     LIST_GPS_VERSION = (By.CSS_SELECTOR, "select[name='gpsVersion']")
     @staticmethod
     def SELECT_GPS_VERSION_OTA(gps_version):

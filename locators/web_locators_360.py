@@ -10,7 +10,7 @@ class LoginPageLocators:
 class CourseMapPageLocators:
     BUTTON_ASSETS = (By.CSS_SELECTOR, 'button[aria-label="assets"]')
 
-    CART_ASSET_DETAILS = (By.CSS_SELECTOR, "div.tabMenuBtn > ul > li:nth-child(2)")
+    CART_ASSET_DETAILS = (By.XPATH, '//li[@rel="tab2"]')
     LIST_VALUES_ASSET_DETAILS = (By.CSS_SELECTOR, "div.contentInfo > strong")
 
     MODAL_WINDOW_MESSAGE = (By.CSS_SELECTOR, "div > div.contentModal")
