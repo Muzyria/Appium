@@ -33,8 +33,10 @@ class BasePage:
         self.driver.get(self.url)
         # self.driver.maximize_window()
 
+
     def open_new_url(self, url):
         self.driver.get(url)
+
 
     def refresh_tab(self):
         self.driver.refresh()

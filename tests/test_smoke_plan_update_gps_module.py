@@ -50,6 +50,7 @@ class TestSmokeGPSModule:
         print(TestSmokeGPSModule.FIRST_TAB)
         time.sleep(1)
 
+
     @pytest.fixture(scope="function", autouse=True)
     def login_to_site_control(self, driver):
         self.login_page.switch_to_new_tab()

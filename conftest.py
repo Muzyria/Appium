@@ -1,9 +1,9 @@
 
 import pytest
+
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.options import Options
 
 from appium import webdriver as appium_webdriver
 
@@ -27,10 +27,15 @@ def driver(request):
     print()
     print("__USE_SELENIUM_FIXTURE__")
     print("\nstart driver for test..")
-    options = Options()
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--window-size=1920,1080")
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+    chrome_options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36")
+
     user_language = request.config.getoption("language")
-    options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    chrome_options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
+
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
     yield driver
     print("\nquit driver..")
     driver.quit()
