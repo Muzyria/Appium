@@ -14,16 +14,6 @@ from appium import webdriver
 import pyautogui
 
 
-# class BasePage:
-#     def __init__(self, browser, url, timeout=10):
-#         self.browser = browser
-#         self.url = url
-#         self.browser.implicitly_wait(timeout)
-#
-#     def open(self):
-#         self.browser.get(self.url)
-#         self.browser.maximize_window()
-
 class BasePage:
     def __init__(self, driver, url):
         self.driver = driver
@@ -33,30 +23,28 @@ class BasePage:
         self.driver.get(self.url)
         # self.driver.maximize_window()
 
-
     def open_new_url(self, url):
         self.driver.get(url)
-
 
     def refresh_tab(self):
         self.driver.refresh()
 
-    def element_is_visible(self, locator, timeout=30):
+    def visibility_of_element_located(self, locator, timeout=30):
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
-    def elements_are_visible(self, locator, timeout=30):
+    def visibility_of_all_elements_located(self, locator, timeout=30):
         return wait(self.driver, timeout).until(EC.visibility_of_all_elements_located(locator))
 
-    def element_is_present(self, locator, timeout=30):
+    def presence_of_element_located(self, locator, timeout=30):
         return wait(self.driver, timeout).until(EC.presence_of_element_located(locator))
 
-    def elements_are_present(self, locator, timeout=30):
+    def presence_of_all_elements_located(self, locator, timeout=30):
         return wait(self.driver, timeout).until(EC.presence_of_all_elements_located(locator))
 
-    def element_is_not_visible(self, locator, timeout=30):
+    def invisibility_of_element_located(self, locator, timeout=30):
         return wait(self.driver, timeout).until(EC.invisibility_of_element_located(locator))
 
-    def element_is_clickable(self, locator, timeout=30):
+    def element_to_be_clickable(self, locator, timeout=30):
         return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
 
     def go_to_element(self, element):
@@ -110,7 +98,7 @@ class BasePage:
 
     def take_element_screenshot(self, locator, file_name):
         try:
-            element = self.element_is_visible(locator)
+            element = self.visibility_of_element_located(locator)
             element.screenshot(file_name)
             print(f"Скриншот элемента сохранен: {file_name}")
         except Exception as e:
