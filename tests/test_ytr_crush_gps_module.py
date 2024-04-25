@@ -23,10 +23,12 @@ class TestGPSUpdate:
         self.login_page.open_new_url(link)
         # time.sleep(3)
 
-    @pytest.fixture(scope="function", autouse=True)
+    # @pytest.fixture(scope="function", autouse=True)
     def connect_device(self):
+        print(f"ADB FIXTURE")
         self.ip_device = "192.168.0.103"
         self.adb_command = AdbCommands(self.ip_device)
+        print(f"Connect device {self.ip_device}")
         self.adb_command.device_connect()
 
     def run_web_checks(self, driver):
@@ -55,12 +57,14 @@ class TestGPSUpdate:
     def run_device_sync(self):
         self.adb_command.device_in_off_hole()
 
-    def test_try_to_crush_gps(self, driver):
+    @pytest.mark.parametrize("i", range(1, 11))
+    def test_try_to_crush_gps(self, driver, i):
         """
         Will make a lot of update firmware  gps module
         """
+        print(f"Running test {i}")
         self.run_web_select_gps_version_update(driver)
         time.sleep(5)
         self.run_web_checks(driver)
         time.sleep(5)
-        self.run_device_sync()
+        # self.run_device_sync()
