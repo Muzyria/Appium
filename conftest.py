@@ -36,12 +36,13 @@ def driver(request):
     chrome_options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
 
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+
+    request.cls.driver = driver  # try
     yield driver
     print("\nquit driver..")
     driver.quit()
 
 
-# Фикстура для Appium
 @pytest.fixture(scope="function")
 def appium_driver():
     """appium fixture"""

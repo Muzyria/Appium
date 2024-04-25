@@ -7,7 +7,7 @@ from locators.web_locators_360 import CourseMapPageLocators
 
 class CourseMapPage(BasePage):
     def check_incoming_message(self, text_language, text_message_device):
-        message_web = self.element_is_visible(CourseMapPageLocators.TEXT_MESSAGE)
+        message_web = self.visibility_of_element_located(CourseMapPageLocators.TEXT_MESSAGE)
         text_message_web = message_web.text
         print(f"message on web - {text_message_web}")
         time.sleep(1)
@@ -17,21 +17,21 @@ class CourseMapPage(BasePage):
     def message_comparison(self, language, text_message_device, text_message_web):
         if text_message_device != text_message_web:
             self.take_element_screenshot(CourseMapPageLocators.MODAL_WINDOW_MESSAGE, f"Expected {language} - {text_message_device}.png")
-            self.element_is_visible(CourseMapPageLocators.BUTTON_CONFIRMED_MESSAGE).click()
+            self.visibility_of_element_located(CourseMapPageLocators.BUTTON_CONFIRMED_MESSAGE).click()
             return False
-        self.element_is_visible(CourseMapPageLocators.BUTTON_CONFIRMED_MESSAGE).click()
+        self.visibility_of_element_located(CourseMapPageLocators.BUTTON_CONFIRMED_MESSAGE).click()
         return True
 
     def go_to_assets_page(self):
-        button_assets = self.element_is_visible(CourseMapPageLocators.BUTTON_ASSETS)
+        button_assets = self.visibility_of_element_located(CourseMapPageLocators.BUTTON_ASSETS)
         button_assets.click()
 
     def press_cart_asset_details(self):
-        button = self.element_is_visible(CourseMapPageLocators.CART_ASSET_DETAILS)
+        button = self.visibility_of_element_located(CourseMapPageLocators.CART_ASSET_DETAILS)
         button.click()
 
     def check_gps_version(self, version_device):
-        list_values = self.elements_are_visible(CourseMapPageLocators.LIST_VALUES_ASSET_DETAILS)
+        list_values = self.visibility_of_element_located(CourseMapPageLocators.LIST_VALUES_ASSET_DETAILS)
         values_gps = [item for item in list_values][2].text
 
         assert version_device == values_gps, f"Device GPS version {version_device} not math GPS version web {values_gps}"
