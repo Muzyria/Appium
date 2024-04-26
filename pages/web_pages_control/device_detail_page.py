@@ -38,9 +38,9 @@ class DeviceDetailPage(BasePage):
         current_version_gps = device_gps_version.replace(" ", "")
         another_gps_version = ""
         # Список пар значений
-        pairs = ['LC79DANR01A06S_BETA0322', 'LC79DANR01A07S', 'LC79HALNR11A01S', 'LC79HALNR11A02S', 'UDR1.00', 'UDR1.31']
-        pairs.pop(pairs.index(device_gps_version))
-        print(pairs)
+        pairs = ['LC79DANR01A06S', 'LC79DANR01A07S', 'LC79HALNR11A01S', 'LC79HALNR11A02S', 'UDR1.00', 'UDR1.31']
+        # pairs = ['LC79HALNR11A01S', 'LC79HALNR11A02S', 'UDR1.00', 'UDR1.31']
+        # pairs.pop(pairs.index(device_gps_version))
 
         another_gps_version = random.choice(pairs)
         print(f"will be selected {another_gps_version}")

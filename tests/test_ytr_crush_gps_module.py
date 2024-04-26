@@ -7,10 +7,12 @@ from pages.web_pages_control.login_page_control import LoginPageControl
 from pages.base_page import AdbCommands
 
 class TestGPSUpdate:
-    CART_NAME = "49_E"
-    DEVICE_ID = "E10150000211018049"
-    CURRENT_GPS_MODULE_VERSION = "UDR1.31"
-    ALTERNATIVE_GPS_MODULE_VERSION = "UDR1.00"
+    # CART_NAME = "49_E"
+    CART_NAME = "A5"
+    # DEVICE_ID = "E10150000211018049"
+    DEVICE_ID = "L101140017180605A5"
+    CURRENT_GPS_MODULE_VERSION = "LC79DANR01A06S_BETA0322"
+    ALTERNATIVE_GPS_MODULE_VERSION = "LC79DANR01A07S"
     UPDATE_GPS_MODULE_VERSION = ""
 
     @pytest.fixture(scope="function", autouse=True)
@@ -23,10 +25,10 @@ class TestGPSUpdate:
         self.login_page.open_new_url(link)
         # time.sleep(3)
 
-    # @pytest.fixture(scope="function", autouse=True)
+    @pytest.fixture(scope="function", autouse=True)
     def connect_device(self):
         print(f"ADB FIXTURE")
-        self.ip_device = "192.168.0.103"
+        self.ip_device = "192.168.0.102"
         self.adb_command = AdbCommands(self.ip_device)
         print(f"Connect device {self.ip_device}")
         self.adb_command.device_connect()
@@ -36,7 +38,10 @@ class TestGPSUpdate:
         self.control_company_page = CompanyPage(driver, driver.current_url)  # init
         self.control_company_page.select_device_by_device_id(self.DEVICE_ID)  # find and click device in list
         gps_version = self.control_device_detail_page.read_gps_fw_info()  # read gps version in control
-        print(f"version on site is {gps_version}")
+        print()
+        print(f"version on site is -------------------- {gps_version}")
+        assert gps_version not in ['LC79DANR01A06S', 'LC79DANR01A07S', 'LC79HALNR11A01S', 'LC79HALNR11A02S', 'UDR1.00', 'UDR1.31']
+        print()
 
     def run_web_select_gps_version_update(self, driver):
         # Запускаем WEB и выбираем версиию для обновления GPS
@@ -55,9 +60,11 @@ class TestGPSUpdate:
         time.sleep(3)
 
     def run_device_sync(self):
+        self.adb_command.touch_screen()
         self.adb_command.device_in_off_hole()
+        self.adb_command.touch_screen()
 
-    @pytest.mark.parametrize("i", range(1, 11))
+    @pytest.mark.parametrize("i", range(1, 100))
     def test_try_to_crush_gps(self, driver, i):
         """
         Will make a lot of update firmware  gps module
@@ -65,6 +72,10 @@ class TestGPSUpdate:
         print(f"Running test {i}")
         self.run_web_select_gps_version_update(driver)
         time.sleep(5)
+
+        self.run_device_sync()
+        time.sleep(90)
+
         self.run_web_checks(driver)
         time.sleep(5)
-        # self.run_device_sync()
+
