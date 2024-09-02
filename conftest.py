@@ -8,8 +8,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from appium import webdriver as appium_webdriver
 
 
-# device_name = "192.168.0.103"
-device_name = "dbe407da"
+# device_name = "192.168.0.100"
+device_name = "61c74e97"
+# device_name = "dbe407da"
 
 
 def pytest_addoption(parser):
